@@ -1,0 +1,30 @@
+// Paddings (used for margins too)
+$padding-default: 2rem;
+$padding-xs: 1rem;
+$padding-sm: 1.5rem;
+$padding-md: $padding-default;
+$padding-lg: 2.5rem;
+$padding-xl: 3rem;
+
+// Typography
+$font-family-default: Arial, Helvetica, sans-serif;
+$font-family-headings: Arial, Helvetica, sans-serif;
+$font-size-default: 1.6rem;
+$font-size-xxs: 1rem;
+$font-size-xs: 1.2rem;
+$font-size-sm: 1.4rem;
+$font-size-md: $font-size-default;
+$font-size-lg: 1.8rem;
+$font-size-xl: 2rem;
+$font-size-xxl: 2.2rem;
+
+// Colors
+$black: #000;
+$white: #fff;
+$gray1: #333;
+$gray2: #666;
+$gray3: #999;
+$gray4: #ccc;
+$blue: #00f;
+$orange: #ff8c00;
+$red: #f00;

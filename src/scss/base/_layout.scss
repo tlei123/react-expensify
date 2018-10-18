@@ -1,0 +1,32 @@
+html {
+  font-size: 10px;
+
+  body {
+    font-family: $font-family-default;
+    font-size: 1.6rem;
+    margin: 0;
+    padding: 0;
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: $font-family-headings;
+    }
+
+    header a.is-active {
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .main-container {
+      padding: $padding-lg;
+    }
+
+    button {
+      border-radius: .3rem;
+      cursor: pointer;
+
+      &:disabled {
+        cursor: default !important;
+      }
+    }
+  }
+}

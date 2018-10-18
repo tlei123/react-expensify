@@ -1,0 +1,63 @@
+// Media-queries
+/* Usage:
+  @include mq('tablet') {
+    width: 50%;
+  }
+*/
+$breakpoints: (
+  "phone":        400px,
+  "phone-wide":   480px,
+  "phablet":      560px,
+  "tablet-small": 640px,
+  "tablet":       768px,
+  "tablet-wide":  1024px,
+  "desktop":      1248px,
+  "desktop-wide": 1440px
+);
+@mixin mq($width, $type: min) {
+  @if map_has_key($breakpoints, $width) {
+    $width: map_get($breakpoints, $width);
+    @if $type == max {
+      $width: $width - 1px;
+    }
+    @media only screen and (#{$type}-width: $width) {
+      @content;
+    }
+  }
+}
+
+// Z-indices
+// Update $z-indices for any new stacked components.
+/* Usage:
+  header {
+    z-index: z('site-header');  // 'site-header' must be defined in $z-indices
+  }
+*/
+$z-indices: (
+  "outdated-browser",
+  "site-header",
+  "page-wrapper",
+  "site-footer",
+  "modal",
+);
+@function z($name) {
+  @if index($z-indices, $name) {
+      @return (length($z-indices) - index($z-indices, $name)) + 1;
+  } @else {
+      @warn 'There is no item "#{$name}" in this list; choose one of: #{$z-indices}';
+      @return null;
+  }
+}
+
+// Truncate text-content
+/* Usage:
+  .one-line-description {
+    @include truncate(32rem);
+  }
+*/
+@mixin truncate($maxWidth) {
+  max-width: $maxWidth;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
