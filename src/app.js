@@ -20,25 +20,6 @@ const unsubscribe = store.subscribe(() => {
   console.log('  Filtered expenses:', filteredExpenses);
 });
 
-store.dispatch(
-  addExpense({
-    amount: 4500,
-    description: 'Water bill'
-  })
-);
-store.dispatch(
-  addExpense({
-    amount: 2000,
-    description: 'Gas bill'
-  })
-);
-store.dispatch(
-  addExpense({
-    amount: 88800,
-    description: 'Rent'
-  })
-);
-
 const jsx = (
   <Provider store={store}>
     <AppRouter />
