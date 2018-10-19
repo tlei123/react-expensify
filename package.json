@@ -5,10 +5,10 @@
   "author": "Tzechiu Lei",
   "license": "MIT",
   "scripts": {
+    "dev-server": "webpack-dev-server",
     "prod-server": "live-server public",
     "build:dev": "webpack",
     "build:prod": "webpack -p --env production",
-    "dev-server": "webpack-dev-server",
     "start": "node server/server.js",
     "heroku-postbuild": "yarn run build:prod"
   },
