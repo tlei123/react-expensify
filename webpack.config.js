@@ -12,7 +12,7 @@ module.exports = (env) => {
       './src/scss/app.scss'
     ],
     output: {
-      path: path.join(__dirname, 'public'),
+      path: path.join(__dirname, 'public', 'dist'),
       filename: 'bundle.js'
     },
     module: {
@@ -51,6 +51,7 @@ module.exports = (env) => {
       contentBase: path.join(__dirname, 'public'),
       historyApiFallback: true,
       port: 8888,
+      publicPath: '/dist/'
     },
   };
 }
