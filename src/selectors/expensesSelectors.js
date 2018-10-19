@@ -1,7 +1,14 @@
 import moment from 'moment';
 
+export const selectExpensesTotals = (expenses) => {
+  return {
+    count: expenses.length,
+    amount: expenses.reduce((sum, item) => { return sum + item.amount}, 0)
+  };
+};
+
 export const filterExpenses = (expenses, {text, startDate, endDate, sortBy }) => {
-  return expenses.filter(item => {
+  return expenses.filter((item) => {
     const createdAtMoment = moment(item.createdAt);
     const startDateMatch = startDate ? startDate.isSameOrBefore(createdAtMoment, 'day') : true;
     const endDateMatch = endDate ? endDate.isSameOrAfter(createdAtMoment, 'day') : true;
