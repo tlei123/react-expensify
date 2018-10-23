@@ -4,8 +4,6 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import AppRouter from './routers/AppRouter';
 import configureStore from './store/configureStore';
-import { addExpense } from './actions/expensesActions';
-import { setFilterText, setFilterSortByAmount } from './actions/filtersActions';
 import { filterExpenses } from './selectors/expensesSelectors';
 import 'normalize.css';
 import './scss/app.scss';
