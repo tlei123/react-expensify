@@ -10,7 +10,7 @@
     "build:prod": "webpack -p --env production",
     "start": "node server/server.js",
     "heroku-postbuild": "yarn run build:prod",
-    "test": "jest"
+    "test": "jest --config=jest.config.json"
   },
   "dependencies": {
     "babel-cli": "6.24.1",
@@ -42,7 +42,11 @@
     "webpack": "3.1.0"
   },
   "devDependencies": {
+    "enzyme": "3.0.0",
+    "enzyme-adapter-react-16": "1.0.0",
     "jest": "20.0.4",
+    "raf": "3.3.2",
+    "react-test-renderer": "16.0.0",
     "webpack-dev-server": "2.5.1"
   }
 }
