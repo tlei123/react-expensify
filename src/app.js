@@ -8,6 +8,7 @@ import { addExpense } from './actions/expensesActions';
 import { setFilterText, setFilterSortByAmount } from './actions/filtersActions';
 import { filterExpenses } from './selectors/expensesSelectors';
 import 'normalize.css';
+import 'react-dates/lib/css/_datepicker.css';
 import './scss/app.scss';
 
 const store = configureStore();
