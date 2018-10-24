@@ -20,6 +20,6 @@ export const setFilterStartDate = (date = undefined) => ({
 });
 
 export const setFilterEndDate = (date = undefined) => ({
-  type: 'SET_FILTER_ENDDDATE',
+  type: 'SET_FILTER_ENDDATE',
   date
 });
