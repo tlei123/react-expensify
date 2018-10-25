@@ -2,7 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-// Conditionally set env.
+// Conditionally set NODE_ENV.
 // process.env.NODE_ENV is predefined on Heroku as 'production', but initially undefined here in this app (locally).
 // We either grab Heroku's value here, or define 'development' for local.
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';

@@ -1,38 +1,12 @@
 import { addExpense, editExpense, removeExpense } from '../../actions/expensesActions';
-
-test('Should set up add-expense action-object with default values', () => {
-  const defaultExpenseeData = {
-      createdAt: 0,
-      amount: 0,
-      description: '',
-      note: ''
-    },
-    actionObj = addExpense();
-
-  expect(actionObj).toEqual({
-    type: 'ADD_EXPENSE',
-    expense: {
-      ...defaultExpenseeData,
-      id: expect.any(String)
-    }
-  });
-});
+import testExpenses from '../fixtures/testExpenses';
 
 test('Should set up add-expense action-object with provided values', () => {
-  const expenseData = {
-      createdAt: 1540324898854,
-      amount: 60000,
-      description: 'Mortgage payment',
-      note: 'For September'
-    },
-    actionObj = addExpense(expenseData);
+  const actionObj = addExpense(testExpenses[2]);
 
   expect(actionObj).toEqual({
     type: 'ADD_EXPENSE',
-    expense: {
-      ...expenseData,
-      id: expect.any(String)
-    }
+    expense: testExpenses[2]
   });
 });
 
