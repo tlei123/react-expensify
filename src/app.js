@@ -6,6 +6,7 @@ import AppRouter from './routers/AppRouter';
 import configureStore from './store/configureStore';
 import { filterExpenses } from './selectors/expensesSelectors';
 import 'normalize.css';
+import 'react-dates/lib/css/_datepicker.css';
 import './scss/app.scss';
 
 const store = configureStore();

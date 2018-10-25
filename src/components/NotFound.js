@@ -5,7 +5,7 @@ const NotFound = () => (
   <div>
     <h2>404 -- Not Found</h2>
     <p>Sorry!  The resource you requested was not found.</p>
-    <p>Go back to <Link to="/">Dashboard</Link>.</p>
+    <p>You can go to <Link to="/">Expense Dashboard</Link>.</p>
   </div>
 );
 

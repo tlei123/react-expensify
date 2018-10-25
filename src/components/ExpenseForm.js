@@ -1,7 +1,6 @@
 import React from 'react';
 import moment from 'moment';
 import { SingleDatePicker } from 'react-dates';
-import 'react-dates/lib/css/_datepicker.css';
 
 export default class ExpenseForm extends React.Component {
   constructor (props) {
@@ -62,7 +61,7 @@ export default class ExpenseForm extends React.Component {
       this.props.onSubmit({
         createdAt: this.state.createdAt.valueOf(),
         description: this.state.description,
-        amount: parseFloat(this.state.amount, 10) * 100,
+        amount: Math.round(parseFloat(this.state.amount, 10) * 100),
         note: this.state.note,
       });
     }
@@ -70,18 +69,22 @@ export default class ExpenseForm extends React.Component {
 
   render () {
     return (
-      <div>
-        {this.state.errorMessage && <p>{this.state.errorMessage}</p>}
-        <form onSubmit={this.onSubmit}>
+      <div className="expenseform component">
+        {this.state.errorMessage && <p className="expenseform-error">{this.state.errorMessage}</p>}
+        <form className="expenseform" onSubmit={this.onSubmit}>
           <input
+            className="expenseform-description"
             type="text"
+            name="description"
             placeholder="Description"
             autoFocus
             value={this.state.description}
             onChange={this.onDescriptionChange}
           />
           <input
+            className="expenseform-amount"
             type="text"
+            name="amount"
             placeholder="Amount"
             value={this.state.amount}
             onChange={this.onAmountChange}
@@ -95,11 +98,13 @@ export default class ExpenseForm extends React.Component {
             isOutsideRange={() => false}
           />
           <textarea
+            className="expenseform-note"
+            name="note"
             placeholder="Add a note.  (optional)"
             value={this.state.note}
             onChange={this.onNoteChange}
           />
-          <button type="submit">{this.props.expense ? 'Update' : 'Add'} Expense</button>
+          <button className="expenseform-submit" type="submit">{this.props.expense ? 'Update' : 'Add'} Expense</button>
         </form>
       </div>
     );
