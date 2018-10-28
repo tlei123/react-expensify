@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render NotFound correctly 1`] = `
+<div>
+  <h2>
+    404 -- Not Found
+  </h2>
+  <p>
+    Sorry!  The resource you requested was not found.
+  </p>
+  <p>
+    You can go to 
+    <Link
+      replace={false}
+      to="/"
+    >
+      Expense Dashboard
+    </Link>
+    .
+  </p>
+</div>
+`;

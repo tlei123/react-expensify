@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render EditExpense correctly 1`] = `
+<div
+  className="editexpense component"
+>
+  <h2
+    className="editexpense-title"
+  >
+    Edit Expense
+  </h2>
+  <ExpenseForm
+    expense={
+      Object {
+        "amount": 4500,
+        "createdAt": 345600000,
+        "description": "Credit card",
+        "id": "3",
+        "note": "",
+      }
+    }
+    onSubmit={[Function]}
+  />
+  <div
+    className="editexpense-actions"
+  >
+    <button
+      className="editexpense-cancel"
+      onClick={[Function]}
+    >
+      Cancel
+    </button>
+     
+    <button
+      className="editexpense-remove"
+      onClick={[Function]}
+    >
+      Remove Expense
+    </button>
+  </div>
+</div>
+`;

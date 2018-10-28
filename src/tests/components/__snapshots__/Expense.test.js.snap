@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render Expense with provided props 1`] = `
+<div
+  className="expense component"
+  id="expense-1"
+>
+  <span
+    className="expense-createdat"
+  >
+    12/31/1969
+    :
+  </span>
+   
+  <span
+    className="expense-description"
+  >
+    Gum
+  </span>
+   
+  <span
+    className="expense-amount"
+  >
+    $1.95
+  </span>
+   
+  <Link
+    className="expense-edit"
+    replace={false}
+    to="/edit/1"
+  >
+    Edit
+  </Link>
+</div>
+`;

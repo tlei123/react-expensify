@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render AddExpense correctly 1`] = `
+<div
+  className="addexpense component"
+>
+  <h2
+    className="addexpense-title"
+  >
+    Add Expense
+  </h2>
+  <ExpenseForm
+    onSubmit={[Function]}
+  />
+  <button
+    className="addexpense-cancel"
+    onClick={[Function]}
+  >
+    Cancel
+  </button>
+</div>
+`;
