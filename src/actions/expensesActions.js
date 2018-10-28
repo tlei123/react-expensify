@@ -1,11 +1,6 @@
 // Expenses actions
 import db from '../firebase/firebase';
 
-export const setExpenses = ((expenses) => ({
-  type: 'SET_EXPENSES',
-  expenses
-}));
-
 export const startSetExpenses = () => {
   return (dispatch) => {
     return db.ref('expenses').once('value').
@@ -28,10 +23,10 @@ export const startSetExpenses = () => {
   };
 };
 
-export const addExpense = (expense) => ({
-  type: 'ADD_EXPENSE',
-  expense
-});
+export const setExpenses = ((expenses) => ({
+  type: 'SET_EXPENSES',
+  expenses
+}));
 
 export const startAddExpense = (expenseData = {}) => {
   return (dispatch) => {
@@ -49,14 +44,34 @@ export const startAddExpense = (expenseData = {}) => {
           id: ref.key,
           ...newExpense
         }));
+      }).
+      catch((err) => {
+        console.error('Could not add expense to database:', err);
       });
   };
 };
+
+export const addExpense = (expense) => ({
+  type: 'ADD_EXPENSE',
+  expense
+});
 
 export const editExpense = (id, updates) => ({
   type: 'EDIT_EXPENSE',
   id,
   updates
+});
+
+export const startRemoveExpense = (({ id } = {}) => {
+  return (dispatch) => {
+    return db.ref(`expenses/${id}`).remove().
+      then(() => {
+        dispatch(removeExpense({ id }));
+      }).
+      catch((err) => {
+        console.error('Could not remove expense from database:', err);
+      });
+  };
 });
 
 export const removeExpense = ({ id } = {}) => ({
