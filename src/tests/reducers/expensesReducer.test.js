@@ -77,3 +77,12 @@ test('Should return same state for remove-expense with unfound id', () => {
 
   expect(newState).toEqual(testExpenses);
 });
+
+test('Should return state with newly-set expenses', () => {
+  const newState = expensesReducer([], {
+    type: 'SET_EXPENSES',
+    expenses: testExpenses
+  });
+
+  expect(newState).toEqual(testExpenses);
+});

@@ -1,6 +1,33 @@
 // Expenses actions
 import db from '../firebase/firebase';
 
+export const setExpenses = ((expenses) => ({
+  type: 'SET_EXPENSES',
+  expenses
+}));
+
+export const startSetExpenses = () => {
+  return (dispatch) => {
+    return db.ref('expenses').once('value').
+      then((dataSnapshot) => {
+        const fetchedExpenses = [];
+        let expenseProps;
+        dataSnapshot.forEach((childSnapshot) => {
+          expenseProps = childSnapshot.val();
+          fetchedExpenses.push({
+            id: childSnapshot.key,
+            ...childSnapshot.val()
+          });
+        });
+        
+        dispatch(setExpenses(fetchedExpenses));
+      }).
+      catch((err) => {
+        console.error('Could not fetch expenses data:', err);
+      });
+  };
+};
+
 export const addExpense = (expense) => ({
   type: 'ADD_EXPENSE',
   expense
