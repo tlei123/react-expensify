@@ -11,6 +11,7 @@ var config = {
 firebase.initializeApp(config);
 
 const db = firebase.database();
+const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
 
 const arrayFromSnapshot = (snapshot) => {
   const arr = [];
@@ -24,7 +25,7 @@ const arrayFromSnapshot = (snapshot) => {
   return arr;
 };
 
-export { firebase, arrayFromSnapshot, db as default };
+export { firebase, googleAuthProvider, arrayFromSnapshot, db as default };
 
 // db.ref('expenses').on('child_added', (snapshot) => {
 //   console.info('Expense added', snapshot.key, snapshot.val());
