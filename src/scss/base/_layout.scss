@@ -23,6 +23,19 @@ html {
 
     a {
       color: $green;
+
+      &:link,
+      &:visited {
+        color: $green;
+      }
+
+      &:not(.is-active):hover {
+        color: lighten($green, 35%);
+      }
+
+      &:active {
+        color: $green;
+      }
     }
 
     header a.is-active {
@@ -43,13 +56,39 @@ html {
       padding: $padding-xs;
       width: 100%;
 
+      &:hover {
+        background-color: darken($green, 20%);
+        border-color: $green;
+      }
+
       &:disabled {
         cursor: default !important;
+        opacity: .5;
       }
 
       @include mq("tablet") {
         margin-right: $padding-xs;
         width: auto;
+      }
+
+      &.caution {
+        background-color: darken($orange, 30%);
+        border-color: darken($orange, 10%);
+
+        &:hover {
+          background-color: darken($orange, 20%);
+          border-color: $orange;
+        }
+      }
+
+      &.danger {
+        background-color: darken($red, 30%);
+        border-color: darken($red, 10%);
+
+        &:hover {
+          background-color: darken($red, 20%);
+          border-color: $red;
+        }
       }
     }
   }
