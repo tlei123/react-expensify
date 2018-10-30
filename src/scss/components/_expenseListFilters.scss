@@ -1,0 +1,68 @@
+.expenselistfilters.component {
+    font-size: 1.4rem;
+
+  .expenselistfilters-title {
+    margin-bottom: $padding-xs;
+    margin-top: $padding-xs;
+  }
+
+  .expenselistfilters-controls {
+    display: flex;
+    flex-flow: column;
+    font-size: 1.4rem;
+
+    > * {
+      margin-bottom: $padding-xs;
+
+      *:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    > input,
+    > select {
+      border: 0;
+      font-size: 1.4rem;
+      overflow: hidden;
+      padding: $padding-xs;
+
+      > option {
+        font-size: 1.4rem;
+      }
+    }
+
+    @include mq("tablet") {
+      flex-flow: row nowrap;
+      justify-content: space-between;
+
+      > input,
+      > select {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .DateRangePicker {
+    border: 0;
+    width: 100%;
+
+    @include mq("tablet") {
+      margin-bottom: 0;
+      width: auto;
+    }
+
+    .DateRangePickerInput {
+      width: 100%;
+
+      .DateInput {
+        font-size: 1.4rem;
+        line-height: 1;
+        width: 110px;
+      }
+
+      .DateRangePickerInput__clear-dates {
+        margin-right: 0;
+      }
+    }
+  }
+}

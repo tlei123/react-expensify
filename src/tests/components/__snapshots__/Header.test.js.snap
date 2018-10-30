@@ -1,11 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Should render header correctly 1`] = `
-<header>
-  <h1>
-    Expensify
+<header
+  className="header component"
+>
+  <h1
+    className="header-title"
+  >
+    React-Expensify
   </h1>
-  <div>
+  <div
+    className="header-nav"
+  >
     <NavLink
       activeClassName="is-active"
       ariaCurrent="true"
