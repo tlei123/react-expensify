@@ -2,13 +2,40 @@ html {
   font-size: 10px;
 
   body {
+    background-color: $black;
+    background-image: url("/dist/img/bg-guggenheim-3.jpg");
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: auto;
+    color: $white;
     font-family: $font-family-default;
     font-size: 1.6rem;
     margin: 0;
     padding: 0;
 
+    @include mq("tablet") {
+      background-size: cover;
+    }
+
     h1, h2, h3, h4, h5, h6 {
       font-family: $font-family-headings;
+    }
+
+    a {
+      color: $green;
+
+      &:link,
+      &:visited {
+        color: $green;
+      }
+
+      &:not(.is-active):hover {
+        color: lighten($green, 35%);
+      }
+
+      &:active {
+        color: $green;
+      }
     }
 
     header a.is-active {
@@ -21,12 +48,58 @@ html {
     }
 
     button {
-      border-radius: .3rem;
+      background-color: darken($green, 30%);
+      border: 2px solid darken($green, 10%);
+      color: $white;
       cursor: pointer;
+      font-weight: bold;
+      padding: $padding-xs;
+      width: 100%;
+
+      &:hover {
+        background-color: darken($green, 20%);
+        border-color: $green;
+      }
 
       &:disabled {
         cursor: default !important;
+        opacity: .5;
       }
+
+      @include mq("tablet") {
+        margin-right: $padding-xs;
+        width: auto;
+      }
+
+      &.caution {
+        background-color: darken($orange, 30%);
+        border-color: darken($orange, 10%);
+
+        &:hover {
+          background-color: darken($orange, 20%);
+          border-color: $orange;
+        }
+      }
+
+      &.danger {
+        background-color: darken($red, 30%);
+        border-color: darken($red, 10%);
+
+        &:hover {
+          background-color: darken($red, 20%);
+          border-color: $red;
+        }
+      }
+    }
+  }
+
+  #app {
+    padding: 0 $padding-lg $padding-lg;
+
+    @include mq("tablet-wide") {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 960px;
     }
   }
 }

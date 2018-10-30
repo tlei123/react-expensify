@@ -1,0 +1,11 @@
+.expensessummary.component {
+  > p {
+    font-size: 1.4rem;
+    margin-top: $padding-xs;
+
+    .expensessummary-count,
+    .expensessummary-amount {
+      font-weight: bold;
+    }
+  }
+}

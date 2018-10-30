@@ -4,8 +4,8 @@ import ExpensesSummary from './ExpensesSummary';
 import ExpenseList from './ExpenseList';
 
 const ExpenseDashboard = () => (
-  <div>
-    <h2>Expense Dashboard</h2>
+  <div className="expensedashboard component">
+    <h2 className="expensedashboard-title">Expense Dashboard</h2>
     <ExpenseListFilters />
     <ExpensesSummary />
     <ExpenseList />

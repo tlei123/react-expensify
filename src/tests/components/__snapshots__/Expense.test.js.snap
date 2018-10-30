@@ -5,31 +5,28 @@ exports[`Should render Expense with provided props 1`] = `
   className="expense component"
   id="expense-1"
 >
-  <span
+  <div
     className="expense-createdat"
   >
     12/31/1969
     :
-  </span>
-   
-  <span
+  </div>
+  <div
     className="expense-description"
   >
     Gum
-  </span>
-   
-  <span
+  </div>
+  <div
     className="expense-amount"
   >
     $1.95
-  </span>
-   
+  </div>
   <Link
     className="expense-edit"
     replace={false}
     to="/edit/1"
   >
-    Edit
+    edit
   </Link>
 </div>
 `;

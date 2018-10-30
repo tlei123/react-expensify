@@ -5,26 +5,8 @@ exports[`Should render ExpenseForm correctly 1`] = `
   className="expenseform component"
 >
   <form
-    className="expenseform"
     onSubmit={[Function]}
   >
-    <input
-      autoFocus={true}
-      className="expenseform-description"
-      name="description"
-      onChange={[Function]}
-      placeholder="Description"
-      type="text"
-      value=""
-    />
-    <input
-      className="expenseform-amount"
-      name="amount"
-      onChange={[Function]}
-      placeholder="Amount"
-      type="text"
-      value=""
-    />
     <SingleDatePicker
       anchorDirection="left"
       customCloseIcon={null}
@@ -101,6 +83,23 @@ exports[`Should render ExpenseForm correctly 1`] = `
       withFullScreenPortal={false}
       withPortal={false}
     />
+    <input
+      autoFocus={true}
+      className="expenseform-description"
+      name="description"
+      onChange={[Function]}
+      placeholder="Description"
+      type="text"
+      value=""
+    />
+    <input
+      className="expenseform-amount"
+      name="amount"
+      onChange={[Function]}
+      placeholder="Amount"
+      type="text"
+      value=""
+    />
     <textarea
       className="expenseform-note"
       name="note"
@@ -124,26 +123,8 @@ exports[`Should render ExpenseForm correctly with expense data 1`] = `
   className="expenseform component"
 >
   <form
-    className="expenseform"
     onSubmit={[Function]}
   >
-    <input
-      autoFocus={true}
-      className="expenseform-description"
-      name="description"
-      onChange={[Function]}
-      placeholder="Description"
-      type="text"
-      value="Rent"
-    />
-    <input
-      className="expenseform-amount"
-      name="amount"
-      onChange={[Function]}
-      placeholder="Amount"
-      type="text"
-      value="1095"
-    />
     <SingleDatePicker
       anchorDirection="left"
       customCloseIcon={null}
@@ -220,6 +201,23 @@ exports[`Should render ExpenseForm correctly with expense data 1`] = `
       withFullScreenPortal={false}
       withPortal={false}
     />
+    <input
+      autoFocus={true}
+      className="expenseform-description"
+      name="description"
+      onChange={[Function]}
+      placeholder="Description"
+      type="text"
+      value="Rent"
+    />
+    <input
+      className="expenseform-amount"
+      name="amount"
+      onChange={[Function]}
+      placeholder="Amount"
+      type="text"
+      value="1095"
+    />
     <textarea
       className="expenseform-note"
       name="note"
@@ -243,26 +241,8 @@ exports[`Should render error on invalid submission 1`] = `
   className="expenseform component"
 >
   <form
-    className="expenseform"
     onSubmit={[Function]}
   >
-    <input
-      autoFocus={true}
-      className="expenseform-description"
-      name="description"
-      onChange={[Function]}
-      placeholder="Description"
-      type="text"
-      value=""
-    />
-    <input
-      className="expenseform-amount"
-      name="amount"
-      onChange={[Function]}
-      placeholder="Amount"
-      type="text"
-      value=""
-    />
     <SingleDatePicker
       anchorDirection="left"
       customCloseIcon={null}
@@ -338,6 +318,23 @@ exports[`Should render error on invalid submission 1`] = `
       weekDayFormat="dd"
       withFullScreenPortal={false}
       withPortal={false}
+    />
+    <input
+      autoFocus={true}
+      className="expenseform-description"
+      name="description"
+      onChange={[Function]}
+      placeholder="Description"
+      type="text"
+      value=""
+    />
+    <input
+      className="expenseform-amount"
+      name="amount"
+      onChange={[Function]}
+      placeholder="Amount"
+      type="text"
+      value=""
     />
     <textarea
       className="expenseform-note"
@@ -367,26 +364,8 @@ exports[`Should render error on invalid submission 2`] = `
     ERROR: Missing description or amount.
   </p>
   <form
-    className="expenseform"
     onSubmit={[Function]}
   >
-    <input
-      autoFocus={true}
-      className="expenseform-description"
-      name="description"
-      onChange={[Function]}
-      placeholder="Description"
-      type="text"
-      value=""
-    />
-    <input
-      className="expenseform-amount"
-      name="amount"
-      onChange={[Function]}
-      placeholder="Amount"
-      type="text"
-      value=""
-    />
     <SingleDatePicker
       anchorDirection="left"
       customCloseIcon={null}
@@ -462,6 +441,23 @@ exports[`Should render error on invalid submission 2`] = `
       weekDayFormat="dd"
       withFullScreenPortal={false}
       withPortal={false}
+    />
+    <input
+      autoFocus={true}
+      className="expenseform-description"
+      name="description"
+      onChange={[Function]}
+      placeholder="Description"
+      type="text"
+      value=""
+    />
+    <input
+      className="expenseform-amount"
+      name="amount"
+      onChange={[Function]}
+      placeholder="Amount"
+      type="text"
+      value=""
     />
     <textarea
       className="expenseform-note"

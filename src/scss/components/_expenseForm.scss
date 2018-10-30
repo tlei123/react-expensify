@@ -1,0 +1,45 @@
+.expenseform.component {
+  form {
+    > * {
+      display: block;
+      margin-bottom: $padding-sm;
+
+      &.SingleDatePicker {
+        max-width: 16rem;
+
+        .SingleDatePickerInput {
+          border: 0;
+
+          .DateInput__input {
+            cursor: pointer;
+          }
+
+          .DateInput--with-caret.DateInput--open-down::after,
+          .DateInput--with-caret.DateInput--open-down::before {
+            top: 47px;
+          }
+        }
+
+        .SingleDatePicker__picker--open-down {
+          top: 57px;
+        }
+      }
+    }
+
+    > input,
+    > textarea {
+      border: 0;
+      padding: $padding-xs;
+      width: calc(100% - #{$padding-lg});
+
+      @include mq("tablet") {
+        min-width: 38rem;
+        width: auto;
+      }
+
+      &.expenseform-amount {
+        text-align: right;
+      }
+    }
+  } 
+}

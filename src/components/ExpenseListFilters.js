@@ -39,29 +39,31 @@ export class ExpenseListFilters extends React.Component {
   render () {
     return (
       <div className="expenselistfilters component">
-        <h4>Filters</h4>
-        <input
-          type="text"
-          name="text"
-          value={this.props.filters.text}
-          onChange={this.onTextChange} />
-        <select
-          name="sortby"
-          value={this.props.filters.sortBy}
-          onChange={this.onSortByChange}>
-          <option value="date">Date</option>
-          <option value="amount">Amount</option>
-        </select>
-        <DateRangePicker
-          startDate={this.props.filters.startDate}
-          endDate={this.props.filters.endDate}
-          onDatesChange={this.onDatesChange}
-          focusedInput={this.state.calendarFocused}
-          onFocusChange={this.onCalendarFocusChange}
-          numberOfMonths={1}
-          isOutsideRange={() => false}
-          showClearDates={true}
-        />
+        <h4 className="expenselistfilters-title">Filters</h4>
+        <div className="expenselistfilters-controls">
+          <input
+            type="text"
+            name="text"
+            value={this.props.filters.text}
+            onChange={this.onTextChange} />
+          <DateRangePicker
+            startDate={this.props.filters.startDate}
+            endDate={this.props.filters.endDate}
+            onDatesChange={this.onDatesChange}
+            focusedInput={this.state.calendarFocused}
+            onFocusChange={this.onCalendarFocusChange}
+            numberOfMonths={1}
+            isOutsideRange={() => false}
+            showClearDates={true}
+          />
+          <select
+            name="sortby"
+            value={this.props.filters.sortBy}
+            onChange={this.onSortByChange}>
+            <option value="date">Sort by Date</option>
+            <option value="amount">Sort by Amount</option>
+          </select>
+        </div>
       </div>
     );
   }
