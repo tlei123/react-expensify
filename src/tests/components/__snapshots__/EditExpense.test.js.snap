@@ -25,14 +25,14 @@ exports[`Should render EditExpense correctly 1`] = `
     className="editexpense-actions"
   >
     <button
-      className="editexpense-cancel"
+      className="editexpense-cancel caution"
       onClick={[Function]}
     >
       Cancel
     </button>
      
     <button
-      className="editexpense-remove"
+      className="editexpense-remove danger"
       onClick={[Function]}
     >
       Remove Expense
