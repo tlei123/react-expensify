@@ -4,6 +4,11 @@ exports[`Should render Login correctly 1`] = `
 <div
   className="login component"
 >
+  <h1
+    className="login-title"
+  >
+    React-Expensify
+  </h1>
   <button
     className="login-btn"
   >

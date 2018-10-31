@@ -2,8 +2,9 @@
 import db, { arrayFromSnapshot } from '../firebase/firebase';
 
 export const startSetExpenses = () => {
-  return (dispatch) => {
-    return db.ref('expenses').once('value').
+  return (dispatch, getState) => {
+    const uid = getState().auth.uid;
+    return db.ref(`users/${uid}/expenses`).once('value').
       then((snapshot) => {
         dispatch(setExpenses(arrayFromSnapshot(snapshot)));
       }).
@@ -19,7 +20,8 @@ export const setExpenses = ((expenses) => ({
 }));
 
 export const startAddExpense = (expenseData = {}) => {
-  return (dispatch) => {
+  return (dispatch, getState) => {
+    const uid = getState().auth.uid;
     const {
       createdAt = 0,
       amount = 0,
@@ -28,7 +30,7 @@ export const startAddExpense = (expenseData = {}) => {
     } = expenseData;
     const newExpense = { createdAt, amount, description, note };
 
-    return db.ref('expenses').push(newExpense).
+    return db.ref(`users/${uid}/expenses`).push(newExpense).
       then((ref) => {
         dispatch(addExpense({
           id: ref.key,
@@ -47,8 +49,9 @@ export const addExpense = (expense) => ({
 });
 
 export const startEditExpense = (id, updates) => {
-  return (dispatch) => {
-    return db.ref(`expenses/${id}`).set(updates).
+  return (dispatch, getState) => {
+    const uid = getState().auth.uid;
+    return db.ref(`users/${uid}/expenses/${id}`).set(updates).
       then(() => {
         dispatch(editExpense(id, updates));
       }).
@@ -65,8 +68,9 @@ export const editExpense = (id, updates) => ({
 });
 
 export const startRemoveExpense = (({ id } = {}) => {
-  return (dispatch) => {
-    return db.ref(`expenses/${id}`).remove().
+  return (dispatch, getState) => {
+    const uid = getState().auth.uid;
+    return db.ref(`users/${uid}/expenses/${id}`).remove().
       then(() => {
         dispatch(removeExpense({ id }));
       }).
