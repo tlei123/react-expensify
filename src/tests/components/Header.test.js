@@ -12,6 +12,6 @@ test('Should fire startLogout properly', () => {
   const startLogout = jest.fn();
   const wrapper = shallow(<Header startLogout={startLogout} />);
 
-  wrapper.find('.header-auth-btn.logout').simulate('click');
+  wrapper.find('.header-auth-btn.exit').simulate('click');
   expect(startLogout).toHaveBeenCalled();
 });

@@ -13,7 +13,7 @@ exports[`Should render AddExpense correctly 1`] = `
     onSubmit={[Function]}
   />
   <button
-    className="addexpense-cancel btn caution"
+    className="addexpense-cancel btn exit"
     onClick={[Function]}
   >
     Cancel
