@@ -8,7 +8,7 @@ export const Header = (props) => (
     <h1 className="header-title">React-Expensify</h1>
     <div className="header-nav">
       <NavLink to="/dashboard" activeClassName="is-active">Dashboard</NavLink> |&nbsp;
-      <NavLink to="/add" activeClassName="is-active">Add Expense</NavLink> |&nbsp;
+      <NavLink to="/add" activeClassName="is-active">Add Expense</NavLink>
     </div>
     <div className="header-auth">
       <button className="header-auth-btn logout" onClick={props.startLogout}>Log out</button>

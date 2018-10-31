@@ -5,7 +5,8 @@ import { startLogin } from '../actions/authActions';
 export const Login = (props) => (
   <div className="login component">
     <h1 className="login-title">React-Expensify</h1>
-    <button className="login-btn" onClick={props.startLogin}>Log in</button>
+    <p className="login-instructions">Please log in to your expenses:</p>
+    <button className="login-btn" onClick={props.startLogin}>Log in with Google</button>
   </div>
 );
 

@@ -1,5 +1,25 @@
 .header.component {
+  align-items: baseline;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  padding: $padding-lg 0 $padding-sm;
+
+  > * {
+    flex: 0 0 auto;
+    vertical-align: baseline;
+  }
+
   .header-title {
-    margin-bottom: $padding-xs;
+    line-height: 1;
+    margin: 0 $padding-xl 0 0;
+  }
+
+  .header-nav {
+    flex-grow: 1;
+  }
+
+  .header-auth {
+    align-self: flex-end;
   }
 }
