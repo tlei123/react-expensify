@@ -21,7 +21,7 @@ export class AddExpense extends React.Component {
       <h2 className="addexpense-title">Add Expense</h2>
       <ExpenseForm onSubmit={this.onSubmit}
       />
-      <button className="addexpense-cancel caution" onClick={() => this.props.history.push('/')}>Cancel</button>
+      <button className="addexpense-cancel btn caution" onClick={() => this.props.history.push('/')}>Cancel</button>
     </div>
       );
   };

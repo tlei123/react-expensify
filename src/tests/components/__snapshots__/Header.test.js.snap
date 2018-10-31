@@ -32,7 +32,7 @@ exports[`Should render header correctly 1`] = `
     className="header-auth"
   >
     <button
-      className="header-auth-btn logout"
+      className="header-auth-btn btn logout"
       onClick={[Function]}
     >
       Log out

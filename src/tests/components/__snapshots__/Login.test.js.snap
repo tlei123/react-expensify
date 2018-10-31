@@ -25,7 +25,7 @@ exports[`Should render Login correctly 1`] = `
     Please log in to your expenses:
   </p>
   <button
-    className="login-btn third-party google"
+    className="login-btn btn third-party google"
     title="Log in with Google"
   />
   <p

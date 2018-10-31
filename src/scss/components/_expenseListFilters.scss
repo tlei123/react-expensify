@@ -44,7 +44,7 @@
 
   .DateRangePicker {
     border: 0;
-    width: 100%;
+    width: auto;
 
     @include mq("tablet") {
       margin-bottom: 0;

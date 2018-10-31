@@ -30,8 +30,8 @@ export class EditExpense extends React.Component {
           onSubmit={this.onSubmit}
         />
         <div className="editexpense-actions">
-          <button className="editexpense-cancel caution" onClick={() => this.props.history.push('/')}>Cancel</button>&nbsp;
-          <button className="editexpense-remove danger" onClick={this.onRemove}>Remove Expense</button>
+          <button className="editexpense-cancel btn caution" onClick={() => this.props.history.push('/')}>Cancel</button>&nbsp;
+          <button className="editexpense-remove btn danger" onClick={this.onRemove}>Remove Expense</button>
         </div>
       </div>
     );

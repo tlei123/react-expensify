@@ -1,9 +1,13 @@
 .header.component {
   align-items: baseline;
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: column;
   justify-content: flex-start;
   padding: $padding-lg 0 $padding-sm;
+
+  @include mq("tablet") {
+    flex-flow: row nowrap;
+  }
 
   > * {
     flex: 0 0 auto;
@@ -17,9 +21,19 @@
 
   .header-nav {
     flex-grow: 1;
+    margin-top: 3rem;
+
+    @include mq("tablet") {
+      margin-top: 0;
+    }
   }
 
   .header-auth {
     align-self: flex-end;
+    margin-top: -4rem;
+
+    @include mq("tablet") {
+      margin-top: 0;
+    }
   }
 }
