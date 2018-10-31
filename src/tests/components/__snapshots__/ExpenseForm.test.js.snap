@@ -111,7 +111,7 @@ exports[`Should render ExpenseForm correctly 1`] = `
       className="expenseform-submit"
       type="submit"
     >
-      Add
+      Save
        Expense
     </button>
   </form>
@@ -347,7 +347,7 @@ exports[`Should render error on invalid submission 1`] = `
       className="expenseform-submit"
       type="submit"
     >
-      Add
+      Save
        Expense
     </button>
   </form>
@@ -470,7 +470,7 @@ exports[`Should render error on invalid submission 2`] = `
       className="expenseform-submit"
       type="submit"
     >
-      Add
+      Save
        Expense
     </button>
   </form>

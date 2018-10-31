@@ -1,0 +1,26 @@
+.login.component {
+  .login-preamble .highlight {
+    color: $orange;
+    font-size: 2rem;
+    font-weight: 900;
+  }
+
+  .login-btn.third-party {
+    background-color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    color: transparent;
+    height: 45px;
+    padding: 0;
+    width: 190px;
+
+    &.google {
+      background-image: url('/img/btn_google_signin_dark_normal_web.png');
+
+      &:hover {
+        background-image: url('/img/btn_google_signin_dark_focus_web.png');
+      }
+    }
+  }
+}

@@ -10,12 +10,9 @@ html {
     color: $white;
     font-family: $font-family-default;
     font-size: 1.6rem;
+    height: 100%;
     margin: 0;
     padding: 0;
-
-    @include mq("tablet") {
-      background-size: cover;
-    }
 
     h1, h2, h3, h4, h5, h6 {
       font-family: $font-family-headings;

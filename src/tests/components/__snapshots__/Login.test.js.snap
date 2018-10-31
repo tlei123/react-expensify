@@ -9,10 +9,36 @@ exports[`Should render Login correctly 1`] = `
   >
     React-Expensify
   </h1>
-  <button
-    className="login-btn"
+  <p
+    className="login-preamble"
   >
-    Log in
-  </button>
+    <span
+      className="highlight"
+    >
+      DEMO for TESTING ONLY
+    </span>
+    : INPUT ONLY IMAGINARY EXPENSES!  Do NOT use this as your real expense-tracker.
+  </p>
+  <p
+    className="login-instructions"
+  >
+    Please log in to your expenses:
+  </p>
+  <button
+    className="login-btn third-party google"
+    title="Log in with Google"
+  />
+  <p
+    className="login-credits"
+  >
+    This DEMO app uses 
+    <a
+      href="https://firebase.google.com/"
+      target="_blank"
+    >
+      Google Firebase
+    </a>
+     Authentication & Databases.
+  </p>
 </div>
 `;
