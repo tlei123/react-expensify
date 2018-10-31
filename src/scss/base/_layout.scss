@@ -68,6 +68,16 @@ html {
         width: auto;
       }
 
+      &.exit {
+        background-color: $gray2;
+        border-color: $gray4;
+  
+        &:hover {
+          background-color: $gray3;
+          border-color: $white;
+        }
+      }
+  
       &.caution {
         background-color: darken($orange, 30%);
         border-color: darken($orange, 10%);
