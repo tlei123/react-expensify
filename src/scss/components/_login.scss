@@ -11,16 +11,18 @@
     background-repeat: no-repeat;
     border: none;
     color: transparent;
-    height: 45px;
     padding: 0;
-    width: 190px;
 
     &.google {
       background-image: url('/img/btn_google_signin_dark_normal_web.png');
+      height: 45px;
+      width: 190px;
+    }
 
-      &:hover {
-        background-image: url('/img/btn_google_signin_dark_focus_web.png');
-      }
+    &.facebook {
+      background-image: url('/img/btn-facebook-login.png');
+      height: 45px;
+      width: 226px;
     }
   }
 }

@@ -28,6 +28,10 @@ exports[`Should render Login correctly 1`] = `
     className="login-btn btn third-party google"
     title="Log in with Google"
   />
+  <button
+    className="login-btn btn third-party facebook"
+    title="Log in with Facebook"
+  />
   <p
     className="login-credits"
   >

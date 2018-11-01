@@ -7,10 +7,10 @@ import configureStore from './store/configureStore';
 import { login, logout } from './actions/authActions';
 import { filterExpenses } from './selectors/expensesSelectors';
 import { startSetExpenses } from './actions/expensesActions';
+import { firebase } from './firebase/firebase';
 import 'normalize.css';
 import 'react-dates/lib/css/_datepicker.css';
 import './scss/app.scss';
-import { firebase } from './firebase/firebase';
 
 const store = configureStore();
 console.log('Initial state:', store.getState());

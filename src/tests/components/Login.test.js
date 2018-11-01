@@ -8,10 +8,18 @@ test('Should render Login correctly', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
-test('Should fire startLogin properly', () => {
-  const startLogin = jest.fn();
-  const wrapper = shallow(<Login startLogin={startLogin} />);
+test('Should fire startLoginGoogle properly', () => {
+  const startLoginGoogle = jest.fn();
+  const wrapper = shallow(<Login startLoginGoogle={startLoginGoogle} />);
 
-  wrapper.find('.login-btn').simulate('click');
-  expect(startLogin).toHaveBeenCalled();
+  wrapper.find('.login-btn.google').simulate('click');
+  expect(startLoginGoogle).toHaveBeenCalled();
+});
+
+test('Should fire startLoginFacebook properly', () => {
+  const startLoginFacebook = jest.fn();
+  const wrapper = shallow(<Login startLoginFacebook={startLoginFacebook} />);
+
+  wrapper.find('.login-btn.facebook').simulate('click');
+  expect(startLoginFacebook).toHaveBeenCalled();
 });
