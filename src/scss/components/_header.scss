@@ -35,5 +35,10 @@
     @include mq("tablet") {
       margin-top: 0;
     }
+
+    .header-auth-greeting {
+      font-weight: 600;
+      margin-right: $padding-sm;
+    }
   }
 }

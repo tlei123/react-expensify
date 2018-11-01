@@ -12,9 +12,10 @@ export const startLoginFacebook = () => {
   };
 };
 
-export const login = (uid) => ({
+export const login = (user) => ({
   type: 'LOGIN',
-  uid
+  uid: user.uid,
+  displayName: user.displayName
 });
 
 export const startLogout = () => {

@@ -3,11 +3,13 @@ import { login, logout } from '../../actions/authActions';
 
 test('Should login properly', () => {
   const uid = 'abc123!',
-    action = login(uid);
+    displayName = 'Joe Blow',
+    action = login({ uid, displayName });
 
   expect(action).toEqual({
     type: 'LOGIN',
-    uid
+    uid,
+    displayName
   });
 });
 

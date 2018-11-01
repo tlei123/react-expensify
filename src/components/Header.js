@@ -11,13 +11,18 @@ export const Header = (props) => (
       <NavLink to="/add" activeClassName="is-active">Add Expense</NavLink>
     </div>
     <div className="header-auth">
+      <span className="header-auth-greeting">{props.auth.displayName}</span>
       <button className="header-auth-btn btn exit" onClick={props.startLogout}>Log out</button>
     </div>
   </header>
 );
 
+const mapStateToProps = (state) => ({
+  auth: state.auth
+});
+
 const mapDispatchToProps = (dispatch) => ({
   startLogout: () => { dispatch(startLogout()); }
 });
 
-export default connect(undefined, mapDispatchToProps)(Header);
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

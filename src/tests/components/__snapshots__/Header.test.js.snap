@@ -31,6 +31,11 @@ exports[`Should render header correctly 1`] = `
   <div
     className="header-auth"
   >
+    <span
+      className="header-auth-greeting"
+    >
+      Joe Blow
+    </span>
     <button
       className="header-auth-btn btn exit"
       onClick={[Function]}

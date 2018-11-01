@@ -3,14 +3,14 @@ import { shallow } from 'enzyme';
 import { Header } from '../../components/Header.js';
 
 test('Should render header correctly', () => {
-  const wrapper = shallow(<Header startLogout={() => {}} />);
+  const wrapper = shallow(<Header auth={{uid: 'abc123!', displayName: 'Joe Blow'}} startLogout={() => {}} />);
 
   expect(wrapper).toMatchSnapshot();
 });
 
 test('Should fire startLogout properly', () => {
   const startLogout = jest.fn();
-  const wrapper = shallow(<Header startLogout={startLogout} />);
+  const wrapper = shallow(<Header auth={{uid: 'abc123!', displayName: 'Joe Blow'}} startLogout={startLogout} />);
 
   wrapper.find('.header-auth-btn.exit').simulate('click');
   expect(startLogout).toHaveBeenCalled();
