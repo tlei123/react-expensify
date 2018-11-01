@@ -98,7 +98,7 @@ const onDbChange = db.ref().on('value', (snapshot) => {
   console.warn('Data ERROR:', err);
 });
 
-subscribe to db changes
+// subscribe to db changes
 const onValueChange = db.ref().on('value', (snapshot) => {
   console.log(snapshot.val());
 }, (err) => {
@@ -109,7 +109,7 @@ setTimeout(() => {
   db.ref('age').set(31);
 }, 3500);
 
-unsubscribe
+// unsubscribe
 setTimeout(() => {
   db.ref().off('value', onValueChange);
 }, 7000);

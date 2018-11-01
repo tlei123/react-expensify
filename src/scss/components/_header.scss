@@ -38,7 +38,17 @@
 
     .header-auth-greeting {
       font-weight: 600;
+      margin-right: $padding-xs;
+    }
+
+    .header-auth-avitar {
+      background-color: $gray2;
+      border-radius: 50%;
+      display: inline-block;
+      height: 32px;
       margin-right: $padding-sm;
+      vertical-align: middle;
+      width: 32px;
     }
   }
 }

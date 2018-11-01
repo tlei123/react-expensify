@@ -15,7 +15,8 @@ export const startLoginFacebook = () => {
 export const login = (user) => ({
   type: 'LOGIN',
   uid: user.uid,
-  displayName: user.displayName
+  displayName: user.displayName,
+  photoURL: user.photoURL
 });
 
 export const startLogout = () => {

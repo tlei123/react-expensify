@@ -4,12 +4,14 @@ import { login, logout } from '../../actions/authActions';
 test('Should login properly', () => {
   const uid = 'abc123!',
     displayName = 'Joe Blow',
-    action = login({ uid, displayName });
+    photoURL = 'https://www.example.com/101561916926181/picture',
+    action = login({ uid, displayName, photoURL });
 
   expect(action).toEqual({
     type: 'LOGIN',
     uid,
-    displayName
+    displayName,
+    photoURL
   });
 });
 
