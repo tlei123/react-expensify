@@ -2,8 +2,8 @@
     font-size: 1.4rem;
 
   .expenselistfilters-title {
-    margin-bottom: $padding-xs;
-    margin-top: $padding-xs;
+    margin-bottom: $space-xs;
+    margin-top: $space-xs;
   }
 
   .expenselistfilters-controls {
@@ -12,7 +12,7 @@
     font-size: 1.4rem;
 
     > * {
-      margin-bottom: $padding-xs;
+      margin-bottom: $space-xs;
 
       *:last-child {
         margin-bottom: 0;
@@ -24,7 +24,7 @@
       border: 0;
       font-size: 1.4rem;
       overflow: hidden;
-      padding: $padding-xs;
+      padding: $space-xs;
 
       > option {
         font-size: 1.4rem;

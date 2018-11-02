@@ -2,7 +2,7 @@
   form {
     > * {
       display: block;
-      margin-bottom: $padding-sm;
+      margin-bottom: $space-sm;
 
       &.SingleDatePicker {
         max-width: 16rem;
@@ -29,8 +29,8 @@
     > input,
     > textarea {
       border: 0;
-      padding: $padding-xs;
-      width: calc(100% - #{$padding-lg});
+      padding: $space-xs;
+      width: calc(100% - #{$space-lg});
 
       @include mq("tablet") {
         min-width: 38rem;

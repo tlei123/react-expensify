@@ -42,7 +42,7 @@ html {
     }
 
     .main-container {
-      padding: $padding-lg;
+      padding: $space-lg;
     }
 
     .btn {
@@ -51,7 +51,7 @@ html {
       color: $white;
       cursor: pointer;
       font-weight: bold;
-      padding: $padding-xs;
+      padding: $space-xs;
       width: 100%;
 
       &:hover {
@@ -65,7 +65,7 @@ html {
       }
 
       @include mq("tablet") {
-        margin-right: $padding-xs;
+        margin-right: $space-xs;
         width: auto;
       }
 
@@ -102,7 +102,7 @@ html {
   }
 
   #app {
-    padding: 0 $padding-lg $padding-lg;
+    padding: 0 $space-lg $space-lg;
 
     @include mq("tablet-wide") {
       margin-left: auto;
