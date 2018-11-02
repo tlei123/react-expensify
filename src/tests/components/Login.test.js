@@ -31,3 +31,11 @@ test('Should fire startLoginTwitter properly', () => {
   wrapper.find('.login-btn.twitter').simulate('click');
   expect(startLoginTwitter).toHaveBeenCalled();
 });
+
+test('Should fire startLoginGithub properly', () => {
+  const startLoginGithub = jest.fn();
+  const wrapper = shallow(<Login startLoginGithub={startLoginGithub} />);
+
+  wrapper.find('.login-btn.github').simulate('click');
+  expect(startLoginGithub).toHaveBeenCalled();
+});

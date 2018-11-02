@@ -13,7 +13,7 @@ export const Header = (props) => (
     <div className="header-auth">
       <span className="header-auth-greeting">{props.auth.displayName}</span>
       {props.auth.photoURL &&
-        <img className="header-auth-avitar" src={props.auth.photoURL} />
+        <img className="header-auth-avatar" src={props.auth.photoURL} />
       }
       <button className="header-auth-btn btn exit" onClick={props.startLogout}>Log out</button>
     </div>

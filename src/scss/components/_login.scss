@@ -11,24 +11,40 @@
     background-repeat: no-repeat;
     border: none;
     color: transparent;
+    margin: 0 2rem 0 0;
+    overflow: visible;
     padding: 0;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+
+    &:hover {
+      box-shadow: 0 0 1rem 0 #c66;
+    }
 
     &.google {
       background-image: url('/img/btn_google_signin_dark_normal_web.png');
-      height: 45px;
-      width: 190px;
+      height: 41px;
+      width: 186px;
     }
 
     &.facebook {
       background-image: url('/img/btn-facebook-login.png');
-      height: 45px;
-      width: 226px;
+      height: 41px;
+      width: 222px;
     }
 
     &.twitter {
       background-image: url('/img/btn-twitter-login.png');
+      height: 41px;
+      width: 176px;
+    }
+
+    &.github {
+      background-image: url('/img/btn-github-login.png');
       height: 45px;
-      width: 197px;
+      width: 176px;
     }
   }
 }

@@ -5,7 +5,16 @@ test('Should login properly', () => {
   const uid = 'abc123!',
     displayName = 'Joe Blow',
     photoURL = 'https://www.example.com/101561916926181/picture',
-    action = login({ uid, displayName, photoURL });
+    userSigninObj = {
+      uid,
+      providerData: [
+        {
+          displayName,
+          photoURL
+        }
+      ]
+    },
+    action = login(userSigninObj);
 
   expect(action).toEqual({
     type: 'LOGIN',
