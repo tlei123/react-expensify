@@ -1,0 +1,34 @@
+.component .SingleDatePicker,
+.component .DateRangePicker {
+  .DateInput {
+    font-size: 1.4rem;
+    line-height: 1;
+    width: 9rem;
+
+    .DateInput__input {
+      cursor: pointer;
+    }
+  }
+}
+
+.component .SingleDatePicker {
+  max-width: 11rem;
+
+  .SingleDatePickerInput {
+    border: 0;
+
+  }
+}
+
+.component .DateRangePicker {
+  border: 0;
+  width: auto;
+
+  .DateRangePickerInput {
+    width: 100%;
+
+    .DateRangePickerInput__clear-dates {
+      margin-right: 0;
+    }
+  }
+}

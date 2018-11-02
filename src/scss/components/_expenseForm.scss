@@ -5,19 +5,10 @@
       margin-bottom: $space-sm;
 
       &.SingleDatePicker {
-        max-width: 16rem;
 
-        .SingleDatePickerInput {
-          border: 0;
-
-          .DateInput__input {
-            cursor: pointer;
-          }
-
-          .DateInput--with-caret.DateInput--open-down::after,
-          .DateInput--with-caret.DateInput--open-down::before {
-            top: 47px;
-          }
+        .DateInput--with-caret.DateInput--open-down::after,
+        .DateInput--with-caret.DateInput--open-down::before {
+          top: 47px;
         }
 
         .SingleDatePicker__picker--open-down {

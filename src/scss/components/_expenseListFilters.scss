@@ -43,26 +43,8 @@
   }
 
   .DateRangePicker {
-    border: 0;
-    width: auto;
-
     @include mq("tablet") {
       margin-bottom: 0;
-      width: auto;
-    }
-
-    .DateRangePickerInput {
-      width: 100%;
-
-      .DateInput {
-        font-size: 1.4rem;
-        line-height: 1;
-        width: 110px;
-      }
-
-      .DateRangePickerInput__clear-dates {
-        margin-right: 0;
-      }
     }
   }
 }
