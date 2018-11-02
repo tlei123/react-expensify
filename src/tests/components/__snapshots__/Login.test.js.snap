@@ -10,6 +10,18 @@ exports[`Should render Login correctly 1`] = `
     React-Expensify
   </h1>
   <p
+    className="login-byline"
+  >
+    by 
+    <a
+      href="http://tze1.com/"
+      target="_blank"
+      title="Tze-chiu Lei's portfolio site"
+    >
+      Tze-chiu Lei
+    </a>
+  </p>
+  <p
     className="login-preamble"
   >
     <span

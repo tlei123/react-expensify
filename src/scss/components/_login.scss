@@ -1,4 +1,13 @@
 .login.component {
+  .login-title {
+    margin-bottom: 0;
+  }
+
+  .login-byline {
+    font-size: 1.2rem;
+    margin-bottom: $padding-sm;
+    margin-top: 0;
+  }
   .login-preamble .highlight {
     color: $orange;
     font-size: 2rem;
