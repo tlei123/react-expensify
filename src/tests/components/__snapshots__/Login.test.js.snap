@@ -32,6 +32,10 @@ exports[`Should render Login correctly 1`] = `
     className="login-btn btn third-party facebook"
     title="Log in with Facebook"
   />
+  <button
+    className="login-btn btn third-party twitter"
+    title="Log in with Twitter"
+  />
   <p
     className="login-credits"
   >

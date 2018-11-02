@@ -23,3 +23,11 @@ test('Should fire startLoginFacebook properly', () => {
   wrapper.find('.login-btn.facebook').simulate('click');
   expect(startLoginFacebook).toHaveBeenCalled();
 });
+
+test('Should fire startLoginTwitter properly', () => {
+  const startLoginTwitter = jest.fn();
+  const wrapper = shallow(<Login startLoginTwitter={startLoginTwitter} />);
+
+  wrapper.find('.login-btn.twitter').simulate('click');
+  expect(startLoginTwitter).toHaveBeenCalled();
+});
