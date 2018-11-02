@@ -7,8 +7,8 @@ test('Should set up default filter values', () => {
   expect(newState).toEqual({
     text: '',
     sortBy: 'date',
-    startDate: moment().startOf('month'),
-    endDate: moment().endOf('month')
+    startDate: moment().subtract(30, 'days'),
+    endDate: undefined
   });
 });
 
