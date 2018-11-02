@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-const NotFound = (props) => (
+export const NotFound = (props) => (
   <div>
     <h2>404 -- Not Found</h2>
     <p>Sorry!  The resource you requested was not found.</p>

@@ -14,7 +14,7 @@ exports[`Should render NotFound correctly 1`] = `
       replace={false}
       to="/"
     >
-      Expense Dashboard
+      Login
     </Link>
     .
   </p>
