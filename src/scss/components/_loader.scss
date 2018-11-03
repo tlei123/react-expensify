@@ -1,0 +1,14 @@
+.loader.component {
+  text-align: center;
+
+  #app > &:first-child {
+    margin-top: 8rem;
+  }
+
+  img {
+    height: 3.8rem;
+    margin: auto;
+    vertical-align: middle;
+    width: 3.8rem;
+  }
+}

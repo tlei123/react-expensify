@@ -8,6 +8,7 @@ import { login, logout } from './actions/authActions';
 import { filterExpenses } from './selectors/expensesSelectors';
 import { startSetExpenses } from './actions/expensesActions';
 import { firebase } from './firebase/firebase';
+import Loader from './components/Loader';
 import 'normalize.css';
 import 'react-dates/lib/css/_datepicker.css';
 import './scss/app.scss';
@@ -35,23 +36,23 @@ const renderApp = () => {
   }
 };
 
-ReactDOM.render(<p>Loading...</p>, document.getElementById('app'));
+ReactDOM.render(<Loader />, document.getElementById('app'));
 
-firebase.auth().onAuthStateChanged((user) => {
-  if (user) {
-    store.dispatch(login(user));
-    store.dispatch(startSetExpenses()).then(() => {
-      renderApp();
-      if (history.location.pathname === '/') {
-        history.push('/dashboard');
-      }
-    });
-    console.log('User logged in.');
-  } else {
-    store.dispatch(logout());
-    renderApp();
-    history.push('/');
-    console.log('User logged out.');
-  }
-});
+// firebase.auth().onAuthStateChanged((user) => {
+//   if (user) {
+//     store.dispatch(login(user));
+//     store.dispatch(startSetExpenses()).then(() => {
+//       renderApp();
+//       if (history.location.pathname === '/') {
+//         history.push('/dashboard');
+//       }
+//     });
+//     console.log('User logged in.');
+//   } else {
+//     store.dispatch(logout());
+//     renderApp();
+//     history.push('/');
+//     console.log('User logged out.');
+//   }
+// });
 
