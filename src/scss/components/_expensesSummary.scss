@@ -1,10 +1,12 @@
 .expensessummary.component {
   > p {
     font-size: 1.4rem;
+    margin-bottom: $space-sm;
     margin-top: $space-xs;
 
     .expensessummary-count,
     .expensessummary-amount {
+      font-size: $font-size-default;
       font-weight: bold;
     }
   }
