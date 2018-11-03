@@ -20,6 +20,7 @@ module.exports = (env) => {
 
   return {
     entry: [
+      'babel-polyfill',
       './src/app.js',
       './src/scss/app.scss'
     ],
