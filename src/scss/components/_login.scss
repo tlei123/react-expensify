@@ -14,18 +14,35 @@
     font-weight: 900;
   }
 
+  .login-btns {
+    display: flex;
+    flex-flow: column nowrap;
+
+    @include mq("tablet-wide") {
+      flex-flow: row nowrap;
+    }
+  }
+
   .login-btn.third-party {
     background-color: transparent;
     background-position: center;
     background-repeat: no-repeat;
     border: none;
     color: transparent;
-    margin: 0 2rem 0 0;
+    margin: 0 auto $space-sm;
     overflow: visible;
     padding: 0;
 
+    @include mq("tablet-wide") {
+      margin: 0 2rem 0 0;
+    }
+
     &:last-of-type {
-      margin-right: 0;
+      margin-bottom: 0;
+
+      @include mq("tablet-wide") {
+        margin-right: 0;
+      }
     }
 
     &:hover {
