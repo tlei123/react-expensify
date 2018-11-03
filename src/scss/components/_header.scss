@@ -21,19 +21,26 @@
 
   .header-nav {
     flex-grow: 1;
-    margin-top: 3rem;
+    order: 3;
 
     @include mq("tablet") {
-      margin-top: 0;
+      order: initial;
     }
   }
 
   .header-auth {
-    align-self: flex-end;
-    margin-top: -4rem;
+    align-items: center;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    width: 100%;
 
     @include mq("tablet") {
+      align-self: flex-end;
+      justify-content: flex-end;
       margin-top: 0;
+      text-align: right;
+      width: auto;
     }
 
     .header-auth-greeting {
@@ -49,6 +56,12 @@
       margin-right: $space-sm;
       vertical-align: middle;
       width: 32px;
+    }
+
+    .header-auth-btn {
+      justify-self: right;
+      margin-left: auto;
+      width: auto;
     }
   }
 }
