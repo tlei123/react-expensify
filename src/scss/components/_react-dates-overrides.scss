@@ -8,6 +8,14 @@
     .DateInput__input {
       cursor: pointer;
     }
+
+    .DateInput__display-text {
+      color: $gray3;
+
+      &.DateInput__display-text--has-input {
+        color: $black;
+      }
+    }
   }
 }
 

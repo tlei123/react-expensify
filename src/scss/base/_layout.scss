@@ -101,6 +101,11 @@ html {
     }
   }
 
+  input::placeholder,
+  textarea::placeholder {
+    color: $gray3;
+  }
+
   #app {
     padding: 0 $space-lg $space-lg;
 

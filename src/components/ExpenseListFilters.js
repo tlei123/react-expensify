@@ -44,6 +44,7 @@ export class ExpenseListFilters extends React.Component {
           <input
             type="text"
             name="text"
+            placeholder="filter by text"
             value={this.props.filters.text}
             onChange={this.onTextChange} />
           <DateRangePicker

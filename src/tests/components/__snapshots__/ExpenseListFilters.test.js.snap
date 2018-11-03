@@ -15,6 +15,7 @@ exports[`Should render ExpenseListFilters correctly 1`] = `
     <input
       name="text"
       onChange={[Function]}
+      placeholder="filter by text"
       type="text"
       value=""
     />
@@ -136,6 +137,7 @@ exports[`Should render ExpenseListFilters with altered filters 1`] = `
     <input
       name="text"
       onChange={[Function]}
+      placeholder="filter by text"
       type="text"
       value="bills"
     />
