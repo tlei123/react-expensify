@@ -38,21 +38,20 @@ const renderApp = () => {
 
 ReactDOM.render(<Loader />, document.getElementById('app'));
 
-// firebase.auth().onAuthStateChanged((user) => {
-//   if (user) {
-//     store.dispatch(login(user));
-//     store.dispatch(startSetExpenses()).then(() => {
-//       renderApp();
-//       if (history.location.pathname === '/') {
-//         history.push('/dashboard');
-//       }
-//     });
-//     console.log('User logged in.');
-//   } else {
-//     store.dispatch(logout());
-//     renderApp();
-//     history.push('/');
-//     console.log('User logged out.');
-//   }
-// });
-
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    store.dispatch(login(user));
+    store.dispatch(startSetExpenses()).then(() => {
+      renderApp();
+      if (history.location.pathname === '/') {
+        history.push('/dashboard');
+      }
+    });
+    console.log('User logged in.');
+  } else {
+    store.dispatch(logout());
+    renderApp();
+    history.push('/');
+    console.log('User logged out.');
+  }
+});
