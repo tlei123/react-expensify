@@ -35,6 +35,10 @@ html {
       }
     }
 
+    .component > h2:first-child {
+      margin-top: 0;
+    }
+
     h3 {
       font-size: $font-size-lg;
 
