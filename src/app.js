@@ -9,8 +9,6 @@ import { filterExpenses } from './selectors/expensesSelectors';
 import { startSetExpenses } from './actions/expensesActions';
 import { firebase } from './firebase/firebase';
 import Loader from './components/Loader';
-import 'normalize.css';
-import 'react-dates/lib/css/_datepicker.css';
 import './scss/app.scss';
 
 const store = configureStore();
