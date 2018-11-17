@@ -6,8 +6,7 @@ export const Login = (props) => (
   <div className="login component">
     <h1 className="login-title">React-Expensify</h1>
     <p className="login-byline">by <a href="http://tze1.com/" title="Tze-chiu Lei's portfolio site" target="_blank">Tze-chiu Lei</a></p>
-    <p className="login-preamble"><span className="highlight">DEMO for TESTING ONLY</span>: INPUT ONLY IMAGINARY EXPENSES!  Do NOT use this as your real expense-tracker.</p>
-    <p className="login-instructions">Please log in to your expenses:</p>
+    <p className="login-instructions">Please log in [no sign-up needed]:</p>
     <div className="login-btns">
       <button className="login-btn btn third-party google" onClick={props.startLoginGoogle} title="Log in with Google">Login with Google</button>
           <button className="login-btn btn third-party facebook" onClick={props.startLoginFacebook} title="Log in with Facebook">Continue with Facebook</button>
