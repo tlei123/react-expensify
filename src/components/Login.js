@@ -14,7 +14,7 @@ export const Login = (props) => (
       <button className="login-btn btn third-party twitter" onClick={props.startLoginTwitter} title="Log in with Twitter">Login with Twitter</button>
       <button className="login-btn btn third-party github" onClick={props.startLoginGithub} title="Log in with GitHub">Login with GitHub</button>
   </div>
-    <p className="login-credits">This DEMO app uses <a href="https://firebase.google.com/" target="_blank">Google Firebase</a> Authentication & Databases.<br />NOTE: To test multiple sign-in methods, first ensure that each method is associated with a different email address.</p>
+    <p className="login-credits">This DEMO app uses <a href="https://firebase.google.com/" target="_blank">Google Firebase</a> Authentication & Databases.<br />NOTE: If testing different sign-in providers, beware that each creates a separate account.  OAuth accounts-linking is beyond the scope of this demo.</p>
     <p className="login-appinfo">See source-code and unit-tests in the <a href="https://github.com/tlei123/react-expensify" target="_blank">GitHub project</a>.</p>
   </div>
 );
