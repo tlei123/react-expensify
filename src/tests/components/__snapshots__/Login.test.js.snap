@@ -22,19 +22,9 @@ exports[`Should render Login correctly 1`] = `
     </a>
   </p>
   <p
-    className="login-preamble"
-  >
-    <span
-      className="highlight"
-    >
-      DEMO for TESTING ONLY
-    </span>
-    : INPUT ONLY IMAGINARY EXPENSES!  Do NOT use this as your real expense-tracker.
-  </p>
-  <p
     className="login-instructions"
   >
-    Please log in to your expenses:
+    Please log in [no sign-up needed]:
   </p>
   <div
     className="login-btns"
@@ -76,7 +66,7 @@ exports[`Should render Login correctly 1`] = `
     </a>
      Authentication & Databases.
     <br />
-    NOTE: To test multiple sign-in methods, first ensure that each method is associated with a different email address.
+    NOTE: If testing different sign-in providers, beware that each creates a separate account.  OAuth accounts-linking is beyond the scope of this demo.
   </p>
   <p
     className="login-appinfo"
