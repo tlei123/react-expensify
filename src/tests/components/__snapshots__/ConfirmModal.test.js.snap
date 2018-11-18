@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render properly with default prop values 1`] = `
+<Modal
+  ariaHideApp={true}
+  bodyOpenClassName="ReactModal__Body--open"
+  className="confirmmodal component modal-content"
+  closeTimeoutMS={0}
+  contentLabel="Confirm"
+  isOpen={true}
+  overlayClassName="modal-overlay"
+  parentSelector={[Function]}
+  portalClassName="ReactModalPortal"
+  role="dialog"
+  shouldCloseOnEsc={true}
+  shouldCloseOnOverlayClick={false}
+  shouldFocusAfterRender={true}
+>
+  <h3
+    className="modal-title"
+  >
+    Confirm
+  </h3>
+  <p
+    className="modal-message"
+  >
+    Are you sure you want to do this?
+  </p>
+  <div
+    className="modal-actions"
+  >
+    <button
+      className="modal-cancel btn exit"
+      onClick={[Function]}
+    >
+      Cancel
+    </button>
+    <button
+      className="modal-ok btn danger"
+      onClick={[Function]}
+    >
+      OK
+    </button>
+  </div>
+</Modal>
+`;
+
+exports[`Should render properly with optional prop values 1`] = `
+<Modal
+  ariaHideApp={true}
+  bodyOpenClassName="ReactModal__Body--open"
+  className="confirmmodal component modal-content"
+  closeTimeoutMS={0}
+  contentLabel="test"
+  isOpen={true}
+  overlayClassName="modal-overlay"
+  parentSelector={[Function]}
+  portalClassName="ReactModalPortal"
+  role="dialog"
+  shouldCloseOnEsc={true}
+  shouldCloseOnOverlayClick={false}
+  shouldFocusAfterRender={true}
+>
+  <h3
+    className="modal-title"
+  >
+    test
+  </h3>
+  <p
+    className="modal-message"
+  >
+    Are you sure you want to do this?
+  </p>
+  <div
+    className="modal-actions"
+  >
+    <button
+      className="modal-cancel btn exit"
+      onClick={[Function]}
+    >
+      no
+    </button>
+    <button
+      className="modal-ok btn danger"
+      onClick={[Function]}
+    >
+      yes
+    </button>
+  </div>
+</Modal>
+`;

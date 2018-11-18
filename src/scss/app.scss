@@ -3,8 +3,9 @@
 @import './base/variables';
 @import './base/mixins';
 @import './base/layout';
-@import './components/react-dates-overrides';
+@import './components/overrides';
 @import './components/loader';
+@import './components/confirmModal';
 @import './components/login';
 @import './components/header';
 @import './components/expenseDashboard';

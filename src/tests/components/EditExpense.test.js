@@ -29,15 +29,38 @@ test('Should handle startEditExpense (onSubmit) correctly', () => {
     note: '[edited note]'
   };
 
+  history.push.mockClear();
+  startEditExpense.mockClear();
   wrapper.find('ExpenseForm').prop('onSubmit')(editedExpense);
 
+  expect.assertions(2);
   expect(history.push).toHaveBeenLastCalledWith('/');
   expect(startEditExpense).toHaveBeenLastCalledWith(testExpense.id, editedExpense);
 });
 
-test('Should handle startRemoveExpense correctly', () => {
+test('Should present confirmation modal on remove button click', () => {
+  wrapper.setState({ showConfirmModal: false });
   wrapper.find('button.editexpense-remove').simulate('click');
 
-  expect(history.push).toHaveBeenLastCalledWith('/');
-  expect(startRemoveExpense).toHaveBeenLastCalledWith({id: testExpense.id});
+  expect(wrapper.state('showConfirmModal')).toBeTruthy();
+  wrapper.setState({ showConfirmModal: false });
+});
+
+test('Should hide confirmation modal on modal-cancel', () => {
+  startRemoveExpense.mockClear();
+  wrapper.setState({ showConfirmModal: true });
+  wrapper.instance().handleRemoveCancel();
+
+  expect.assertions(2);
+  expect(wrapper.state('showConfirmModal')).toBeFalsy();
+  expect(startRemoveExpense).not.toHaveBeenCalled();
+})
+
+test('Should handle confirmed removal properly', () => {
+  startRemoveExpense.mockClear();
+  wrapper.instance().startRemove();
+
+  expect.assertions(2);
+  expect(wrapper.state('showConfirmModal')).toBeFalsy();
+  expect(startRemoveExpense).toHaveBeenCalledWith({ id: testExpense.id });
 });

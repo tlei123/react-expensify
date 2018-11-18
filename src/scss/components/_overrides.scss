@@ -1,0 +1,81 @@
+.component .SingleDatePicker,
+.component .DateRangePicker {
+  .DateInput {
+    font-size: 1.4rem;
+    line-height: 1;
+    width: 9rem;
+
+    .DateInput__input {
+      cursor: pointer;
+    }
+
+    .DateInput__display-text {
+      color: $gray3;
+
+      &.DateInput__display-text--has-input {
+        color: $black;
+      }
+    }
+  }
+}
+
+.component .SingleDatePicker {
+  max-width: 11rem;
+
+  .SingleDatePickerInput {
+    border: 0;
+
+  }
+}
+
+.component .DateRangePicker {
+  border: 0;
+  width: auto;
+
+  .DateRangePickerInput {
+    width: 100%;
+
+    .DateRangePickerInput__clear-dates {
+      margin-right: 0;
+    }
+  }
+}
+
+body .ReactModalPortal {
+  .modal-overlay {
+    background-color: rgba($black, .65);
+    bottom: 0px;
+    left: 0px;
+    position: fixed;
+    right: 0px;
+    top: 0px;
+  }
+
+  .modal-content {
+    background-color: $white;
+    color: $black;
+    margin: $space-xl auto 0;
+    max-width: 90%;
+    padding: $space-md;
+  
+    @include mq("tablet") {
+      max-width: 75%;
+    }
+  
+    @include mq("tablet-wide") {
+      max-width: 50%;
+    }
+
+    .modal-title {
+      margin-top: 0;
+    }
+
+    .modal-actions {
+      text-align: center;
+  
+      @include mq("tablet") {
+        text-align: right;
+      }
+    }
+    }
+}
