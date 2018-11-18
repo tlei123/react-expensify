@@ -1,14 +1,21 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import ExpenseForm from './ExpenseForm';
+import ConfirmModal from './ConfirmModal';
 import { startEditExpense, startRemoveExpense } from '../actions/expensesActions';
 
 export class EditExpense extends React.Component {
   constructor (props) {
     super(props);
 
+    this.state = {
+      showConfirmModal: false,
+    };
+
     this.onSubmit = this.onSubmit.bind(this);
     this.onRemove = this.onRemove.bind(this);
+    this.handleRemoveCancel = this.handleRemoveCancel.bind(this);
+    this.startRemove = this.startRemove.bind(this);
   }
 
   onSubmit = (expense) => {
@@ -17,9 +24,18 @@ export class EditExpense extends React.Component {
   };
 
   onRemove = () => {
-    this.props.startRemoveExpense({ id: this.props.expense.id });
-    this.props.history.push('/');
+    this.setState({ showConfirmModal: true });
   };
+
+  handleRemoveCancel = () => {
+    this.setState({ showConfirmModal: false });
+  }
+
+  startRemove = () => {
+    this.props.startRemoveExpense({ id: this.props.expense.id });
+    this.setState({ showConfirmModal: false });
+    this.props.history.push('/');
+  }
 
   render () {
     return (
@@ -31,8 +47,16 @@ export class EditExpense extends React.Component {
         />
         <div className="editexpense-actions">
           <button className="editexpense-cancel btn exit" onClick={() => this.props.history.push('/')}>Cancel</button>&nbsp;
-          <button className="editexpense-remove btn danger" onClick={this.onRemove}>Remove Expense</button>
+          <button className="editexpense-remove btn caution" onClick={this.onRemove}>Remove Expense</button>
         </div>
+        <ConfirmModal
+          show={this.state.showConfirmModal}
+          title='Confirm Remove'
+          content='Are you sure you want to remove this expense?  This cannot be undone.'
+          btnLabelOk='Yes, remove'
+          handleCancel={this.handleRemoveCancel}
+          handleOk={this.startRemove}
+        />
       </div>
     );
   }

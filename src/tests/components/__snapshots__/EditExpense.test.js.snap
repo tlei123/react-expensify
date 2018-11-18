@@ -32,11 +32,19 @@ exports[`Should render EditExpense correctly 1`] = `
     </button>
      
     <button
-      className="editexpense-remove btn danger"
+      className="editexpense-remove btn caution"
       onClick={[Function]}
     >
       Remove Expense
     </button>
   </div>
+  <ConfirmModal
+    btnLabelOk="Yes, remove"
+    content="Are you sure you want to remove this expense?  This cannot be undone."
+    handleCancel={[Function]}
+    handleOk={[Function]}
+    show={false}
+    title="Confirm Remove"
+  />
 </div>
 `;
