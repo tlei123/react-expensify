@@ -15,7 +15,7 @@ export const Header = (props) => (
       {props.auth.photoURL &&
         <img className="header-auth-avatar" src={props.auth.photoURL} />
       }
-      <button className="header-auth-btn btn exit" onClick={props.startLogout}>Log out</button>
+      <button className="header-auth-btn button exit" onClick={props.startLogout}>Log out</button>
     </div>
   </header>
 );

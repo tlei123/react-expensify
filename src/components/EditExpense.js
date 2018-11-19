@@ -46,8 +46,8 @@ export class EditExpense extends React.Component {
           onSubmit={this.onSubmit}
         />
         <div className="editexpense-actions">
-          <button className="editexpense-cancel btn exit" onClick={() => this.props.history.push('/')}>Cancel</button>&nbsp;
-          <button className="editexpense-remove btn caution" onClick={this.onRemove}>Remove Expense</button>
+          <button className="editexpense-cancel button exit" onClick={() => this.props.history.push('/')}>Cancel</button>&nbsp;
+          <button className="editexpense-remove button caution" onClick={this.onRemove}>Remove Expense</button>
         </div>
         <ConfirmModal
           show={this.state.showConfirmModal}
