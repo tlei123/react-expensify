@@ -130,6 +130,12 @@ html {
           border-color: $red;
         }
       }
+    }  // .button
+
+    input,
+    select,
+    textarea {
+      color: $black;
     }
   }
 
