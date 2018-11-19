@@ -30,13 +30,13 @@ exports[`Should render properly with default prop values 1`] = `
     className="modal-actions"
   >
     <button
-      className="modal-cancel btn exit"
+      className="modal-cancel button exit"
       onClick={[Function]}
     >
       Cancel
     </button>
     <button
-      className="modal-ok btn danger"
+      className="modal-ok button danger"
       onClick={[Function]}
     >
       OK
@@ -75,13 +75,13 @@ exports[`Should render properly with optional prop values 1`] = `
     className="modal-actions"
   >
     <button
-      className="modal-cancel btn exit"
+      className="modal-cancel button exit"
       onClick={[Function]}
     >
       no
     </button>
     <button
-      className="modal-ok btn danger"
+      className="modal-ok button danger"
       onClick={[Function]}
     >
       yes

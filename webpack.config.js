@@ -55,6 +55,14 @@ module.exports = (env) => {
             ]
           }),
           test: /\.s?css$/,
+        },
+        {
+          loader: 'file-loader',
+          test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'fonts/'
+          }
         }
       ],
     },
