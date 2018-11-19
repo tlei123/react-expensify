@@ -108,7 +108,7 @@ exports[`Should render ExpenseForm correctly 1`] = `
       value=""
     />
     <button
-      className="expenseform-submit btn"
+      className="expenseform-submit button"
       type="submit"
     >
       Save
@@ -226,7 +226,7 @@ exports[`Should render ExpenseForm correctly with expense data 1`] = `
       value=""
     />
     <button
-      className="expenseform-submit btn"
+      className="expenseform-submit button"
       type="submit"
     >
       Update
@@ -344,7 +344,7 @@ exports[`Should render error on invalid submission 1`] = `
       value=""
     />
     <button
-      className="expenseform-submit btn"
+      className="expenseform-submit button"
       type="submit"
     >
       Save
@@ -467,7 +467,7 @@ exports[`Should render error on invalid submission 2`] = `
       value=""
     />
     <button
-      className="expenseform-submit btn"
+      className="expenseform-submit button"
       type="submit"
     >
       Save

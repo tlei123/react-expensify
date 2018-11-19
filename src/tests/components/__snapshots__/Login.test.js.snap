@@ -30,25 +30,25 @@ exports[`Should render Login correctly 1`] = `
     className="login-btns"
   >
     <button
-      className="login-btn btn third-party google"
+      className="login-btn button third-party google"
       title="Log in with Google"
     >
       Login with Google
     </button>
     <button
-      className="login-btn btn third-party facebook"
+      className="login-btn button third-party facebook"
       title="Log in with Facebook"
     >
       Continue with Facebook
     </button>
     <button
-      className="login-btn btn third-party twitter"
+      className="login-btn button third-party twitter"
       title="Log in with Twitter"
     >
       Login with Twitter
     </button>
     <button
-      className="login-btn btn third-party github"
+      className="login-btn button third-party github"
       title="Log in with GitHub"
     >
       Login with GitHub

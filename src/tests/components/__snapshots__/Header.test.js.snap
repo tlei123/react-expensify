@@ -37,7 +37,7 @@ exports[`Should render header correctly 1`] = `
       Joe Blow
     </span>
     <button
-      className="header-auth-btn btn exit"
+      className="header-auth-btn button exit"
       onClick={[Function]}
     >
       Log out

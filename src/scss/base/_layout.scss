@@ -1,6 +1,4 @@
 html {
-  font-size: 10px;
-
   body {
     background-color: $black;
     background-image: url("/img/bg-guggenheim-3.jpg");
@@ -9,7 +7,7 @@ html {
     background-size: auto;
     color: $white;
     font-family: $font-family-default;
-    font-size: 1.6rem;
+    font-size: $font-size-default;
     height: 100%;
     line-height: 1.25;
     margin: 0;
@@ -79,7 +77,7 @@ html {
       padding: $space-lg;
     }
 
-    .btn {
+    .button {
       background-color: darken($green, 30%);
       border: 2px solid darken($green, 10%);
       color: $white;

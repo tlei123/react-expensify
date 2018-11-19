@@ -1,5 +1,5 @@
 .expenselistfilters.component {
-    font-size: 1.4rem;
+    font-size: $font-size-sm;
 
   .expenselistfilters-title {
     margin-bottom: $space-xs;
@@ -9,7 +9,7 @@
   .expenselistfilters-controls {
     display: flex;
     flex-flow: column;
-    font-size: 1.4rem;
+    font-size: $font-size-sm;
 
     > * {
       margin-bottom: $space-xs;
@@ -22,12 +22,12 @@
     > input,
     > select {
       border: 0;
-      font-size: 1.4rem;
+      font-size: $font-size-sm;
       overflow: hidden;
       padding: $space-xs;
 
       > option {
-        font-size: 1.4rem;
+        font-size: inherit;
       }
     }
 
@@ -46,5 +46,13 @@
     @include mq("tablet") {
       margin-bottom: 0;
     }
-  }
+    .DateInput--with-caret.DateInput--open-down::after,
+    .DateInput--with-caret.DateInput--open-down::before {
+      top: 37px;
+    }
+
+    .DateRangePicker__picker--open-down {
+      top: 47px;
+    }
+}
 }

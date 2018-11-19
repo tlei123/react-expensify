@@ -25,10 +25,10 @@ const ConfirmModal = (props) => (
     <h3 className="modal-title">{ props.title ? props.title : 'Confirm' }</h3>
     <p className="modal-message">{ props.content }</p>
     <div className="modal-actions">
-      <button onClick={ props.handleCancel } className="modal-cancel btn exit">
+      <button onClick={ props.handleCancel } className="modal-cancel button exit">
         { props.btnLabelCancel ? props.btnLabelCancel : 'Cancel' }
       </button>
-      <button onClick={ props.handleOk } className="modal-ok btn danger">
+      <button onClick={ props.handleOk } className="modal-ok button danger">
         { props.btnLabelOk ? props.btnLabelOk : 'OK' }
       </button>
     </div>

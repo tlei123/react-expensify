@@ -1,9 +1,9 @@
 .component .SingleDatePicker,
 .component .DateRangePicker {
   .DateInput {
-    font-size: 1.4rem;
+    font-size: $font-size-sm;
     line-height: 1;
-    width: 9rem;
+    width: 11rem;
 
     .DateInput__input {
       cursor: pointer;
@@ -20,7 +20,7 @@
 }
 
 .component .SingleDatePicker {
-  max-width: 11rem;
+  max-width: 12rem;
 
   .SingleDatePickerInput {
     border: 0;
