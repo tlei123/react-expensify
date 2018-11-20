@@ -2,90 +2,166 @@
 
 exports[`Should render properly with default prop values 1`] = `
 <Modal
-  ariaHideApp={true}
-  bodyOpenClassName="ReactModal__Body--open"
-  className="confirmmodal component modal-content"
-  closeTimeoutMS={0}
-  contentLabel="Confirm"
-  isOpen={true}
-  overlayClassName="modal-overlay"
-  parentSelector={[Function]}
-  portalClassName="ReactModalPortal"
-  role="dialog"
-  shouldCloseOnEsc={true}
-  shouldCloseOnOverlayClick={false}
-  shouldFocusAfterRender={true}
+  animation={true}
+  autoFocus={true}
+  backdrop={true}
+  bsClass="modal"
+  className="confirmmodal component"
+  dialogComponentClass={[Function]}
+  enforceFocus={true}
+  keyboard={true}
+  manager={
+    ModalManager {
+      "add": [Function],
+      "containers": Array [],
+      "data": Array [],
+      "handleContainerOverflow": true,
+      "hideSiblingNodes": true,
+      "isTopModal": [Function],
+      "modals": Array [],
+      "remove": [Function],
+    }
+  }
+  onHide={[Function]}
+  renderBackdrop={[Function]}
+  restoreFocus={true}
+  show={true}
 >
-  <h3
-    className="modal-title"
+  <ModalHeader
+    bsClass="modal-header"
+    className="modal-header"
+    closeButton={false}
+    closeLabel="Close"
   >
-    Confirm
-  </h3>
-  <p
-    className="modal-message"
+    <ModalTitle
+      bsClass="modal-title"
+      className="modal-title"
+      componentClass="h4"
+    >
+      Confirm
+    </ModalTitle>
+  </ModalHeader>
+  <ModalBody
+    bsClass="modal-body"
+    className="modal-body"
+    componentClass="div"
   >
-    Are you sure you want to do this?
-  </p>
-  <div
-    className="modal-actions"
+    <p
+      className="modal-message"
+    >
+      Are you sure you want to do this?
+    </p>
+  </ModalBody>
+  <ModalFooter
+    bsClass="modal-footer"
+    className="modal-footer"
+    componentClass="div"
   >
-    <button
+    <Button
+      active={false}
+      block={false}
+      bsClass="btn"
+      bsStyle="default"
       className="modal-cancel button exit"
+      disabled={false}
       onClick={[Function]}
     >
       Cancel
-    </button>
-    <button
+    </Button>
+    <Button
+      active={false}
+      block={false}
+      bsClass="btn"
+      bsStyle="default"
       className="modal-ok button danger"
+      disabled={false}
       onClick={[Function]}
     >
       OK
-    </button>
-  </div>
+    </Button>
+  </ModalFooter>
 </Modal>
 `;
 
 exports[`Should render properly with optional prop values 1`] = `
 <Modal
-  ariaHideApp={true}
-  bodyOpenClassName="ReactModal__Body--open"
-  className="confirmmodal component modal-content"
-  closeTimeoutMS={0}
-  contentLabel="test"
-  isOpen={true}
-  overlayClassName="modal-overlay"
-  parentSelector={[Function]}
-  portalClassName="ReactModalPortal"
-  role="dialog"
-  shouldCloseOnEsc={true}
-  shouldCloseOnOverlayClick={false}
-  shouldFocusAfterRender={true}
+  animation={true}
+  autoFocus={true}
+  backdrop={true}
+  bsClass="modal"
+  className="confirmmodal component"
+  dialogComponentClass={[Function]}
+  enforceFocus={true}
+  keyboard={true}
+  manager={
+    ModalManager {
+      "add": [Function],
+      "containers": Array [],
+      "data": Array [],
+      "handleContainerOverflow": true,
+      "hideSiblingNodes": true,
+      "isTopModal": [Function],
+      "modals": Array [],
+      "remove": [Function],
+    }
+  }
+  onHide={[Function]}
+  renderBackdrop={[Function]}
+  restoreFocus={true}
+  show={true}
 >
-  <h3
-    className="modal-title"
+  <ModalHeader
+    bsClass="modal-header"
+    className="modal-header"
+    closeButton={false}
+    closeLabel="Close"
   >
-    test
-  </h3>
-  <p
-    className="modal-message"
+    <ModalTitle
+      bsClass="modal-title"
+      className="modal-title"
+      componentClass="h4"
+    >
+      test
+    </ModalTitle>
+  </ModalHeader>
+  <ModalBody
+    bsClass="modal-body"
+    className="modal-body"
+    componentClass="div"
   >
-    Are you sure you want to do this?
-  </p>
-  <div
-    className="modal-actions"
+    <p
+      className="modal-message"
+    >
+      Are you sure you want to do this?
+    </p>
+  </ModalBody>
+  <ModalFooter
+    bsClass="modal-footer"
+    className="modal-footer"
+    componentClass="div"
   >
-    <button
+    <Button
+      active={false}
+      block={false}
+      bsClass="btn"
+      bsStyle="default"
       className="modal-cancel button exit"
+      disabled={false}
       onClick={[Function]}
     >
       no
-    </button>
-    <button
+    </Button>
+    <Button
+      active={false}
+      block={false}
+      bsClass="btn"
+      bsStyle="default"
       className="modal-ok button danger"
+      disabled={false}
       onClick={[Function]}
     >
       yes
-    </button>
-  </div>
+    </Button>
+  </ModalFooter>
 </Modal>
 `;
