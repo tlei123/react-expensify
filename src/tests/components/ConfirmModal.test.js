@@ -33,7 +33,7 @@ test('Should render properly with optional prop values', () => {
 test('Should call cancel method on cancel-button click', () => {
   handleOkStub.mockClear();
   handleCancelStub.mockClear();
-  wrapper.find('button.modal-cancel').simulate('click');
+  wrapper.find('Button.modal-cancel').simulate('click');
 
   expect(handleOkStub).not.toHaveBeenCalled();
   expect(handleCancelStub).toHaveBeenCalled();
@@ -42,7 +42,7 @@ test('Should call cancel method on cancel-button click', () => {
 test('Should call ok method on ok-button click', () => {
   handleOkStub.mockClear();
   handleCancelStub.mockClear();
-  wrapper.find('button.modal-ok').simulate('click');
+  wrapper.find('Button.modal-ok').simulate('click');
 
   expect(handleCancelStub).not.toHaveBeenCalled();
   expect(handleOkStub).toHaveBeenCalled();
