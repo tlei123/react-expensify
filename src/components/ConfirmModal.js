@@ -1,5 +1,5 @@
 import React from 'react';
-import Modal from 'react-modal';
+import { Modal, Button } from 'react-bootstrap';
 
 /* Usage:
 * import ConfirmModel from '<path-from-importer-to-ConfirmModal>';
@@ -15,24 +15,30 @@ import Modal from 'react-modal';
 */
 
 const ConfirmModal = (props) => (
-  <Modal className="confirmmodal component modal-content"
-    overlayClassName="modal-overlay"
-    isOpen={ props.show }
-    role='dialog'
-    shouldCloseOnOverlayClick={false}
-    contentLabel={ props.title ? props.title : 'Confirm' }
-  >
-    <h3 className="modal-title">{ props.title ? props.title : 'Confirm' }</h3>
-    <p className="modal-message">{ props.content }</p>
-    <div className="modal-actions">
-      <button onClick={ props.handleCancel } className="modal-cancel button exit">
-        { props.btnLabelCancel ? props.btnLabelCancel : 'Cancel' }
-      </button>
-      <button onClick={ props.handleOk } className="modal-ok button danger">
-        { props.btnLabelOk ? props.btnLabelOk : 'OK' }
-      </button>
-    </div>
-  </Modal>
+    <Modal show={ props.show } className="confirmmodal component">
+      <Modal.Header className="modal-header">
+        <Modal.Title className="modal-title">{ props.title ? props.title : 'Confirm'}</Modal.Title>
+      </Modal.Header>
+
+      <Modal.Body className="modal-body">
+        <p className="modal-message">{ props.content }</p>
+      </Modal.Body>
+
+      <Modal.Footer className="modal-footer">
+        <Button
+          onClick={ props.handleCancel }
+          className="modal-cancel button exit"
+        >
+          { props.btnLabelCancel ? props.btnLabelCancel : 'Cancel' }
+        </Button>
+        <Button
+          onClick={ props.handleOk }
+          className="modal-ok button danger"
+        >
+          { props.btnLabelOk ? props.btnLabelOk : 'OK' }
+        </Button>
+      </Modal.Footer>
+    </Modal>
 );
 
 export default ConfirmModal;

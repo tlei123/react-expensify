@@ -1,3 +1,37 @@
+body {
+  // react-bootstrap components
+  .modal-backdrop.in {
+    opacity: .65;
+  }
+
+  .modal-dialog {
+    .modal-content {
+      background-color: $white;
+      color: $black;
+
+      .modal-title {
+        margin-top: 0;
+      }
+
+      .modal-footer {
+        text-align: center;
+    
+        @include mq("tablet") {
+          text-align: right;
+        }
+
+        button:nth-child(n + 1) {
+          margin-left: 0;
+
+          @include mq("tablet") {
+            margin-left: initial;
+          }
+        }
+      } // .modal-footer
+    } // .modal-content
+  } // .modal-dialog
+} // body
+
 .component .SingleDatePicker,
 .component .DateRangePicker {
   .DateInput {
@@ -17,7 +51,7 @@
       }
     }
   }
-}
+} // .component .SingleDatePicker, .component .DateRangePicker
 
 .component .SingleDatePicker {
   max-width: 12rem;
@@ -26,7 +60,7 @@
     border: 0;
 
   }
-}
+} // .component .SingleDatePicker
 
 .component .DateRangePicker {
   border: 0;
@@ -39,43 +73,4 @@
       margin-right: 0;
     }
   }
-}
-
-body .ReactModalPortal {
-  .modal-overlay {
-    background-color: rgba($black, .65);
-    bottom: 0px;
-    left: 0px;
-    position: fixed;
-    right: 0px;
-    top: 0px;
-  }
-
-  .modal-content {
-    background-color: $white;
-    color: $black;
-    margin: $space-xl auto 0;
-    max-width: 90%;
-    padding: $space-md;
-  
-    @include mq("tablet") {
-      max-width: 75%;
-    }
-  
-    @include mq("tablet-wide") {
-      max-width: 50%;
-    }
-
-    .modal-title {
-      margin-top: 0;
-    }
-
-    .modal-actions {
-      text-align: center;
-  
-      @include mq("tablet") {
-        text-align: right;
-      }
-    }
-    }
-}
+} // .component .DateRangePicker

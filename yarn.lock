@@ -2413,11 +2413,6 @@ exec-sh@^0.2.0:
   dependencies:
     merge "^1.2.0"
 
-exenv@^1.2.0:
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/exenv/-/exenv-1.2.2.tgz#2ae78e85d9894158670b03d47bec1f03bd91bb9d"
-  integrity sha1-KueOhdmJQVhnCwPUe+wfA72Ru50=
-
 expand-brackets@^0.1.4:
   version "0.1.5"
   resolved "https://registry.yarnpkg.com/expand-brackets/-/expand-brackets-0.1.5.tgz#df07284e342a807cd733ac5af72411e581d1177b"
@@ -5522,14 +5517,6 @@ react-is@^16.3.2:
   version "16.6.3"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.6.3.tgz#d2d7462fcfcbe6ec0da56ad69047e47e56e7eac0"
   integrity sha512-u7FDWtthB4rWibG/+mFbVd5FvdI20yde86qKGx4lVUTWmPlSWQ4QxbBIrrs+HnXGbxOUlUzTAP/VDmvCwaP2yA==
-
-react-modal@3.0.4:
-  version "3.0.4"
-  resolved "https://registry.yarnpkg.com/react-modal/-/react-modal-3.0.4.tgz#61f3c9a701b27d2015fe5ac0c419e3c977e4092a"
-  integrity sha512-IvRZxJkXiDqEIl4cxCccCzP37z+YOSN+yNOkYH99Ime+n9nPSowgxkX0KfHzR2ezP72LSS3Uln54JDZXUJmLdA==
-  dependencies:
-    exenv "^1.2.0"
-    prop-types "^15.5.10"
 
 react-moment-proptypes@^1.5.0:
   version "1.6.0"
