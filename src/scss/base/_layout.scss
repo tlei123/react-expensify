@@ -139,6 +139,15 @@ html {
     }
   }
 
+  .modal-container {
+    position: relative;
+
+    .modal,
+    .modal-backdrop {
+      position: absolute;
+    }
+  }
+
   input::placeholder,
   textarea::placeholder {
     color: $gray3;

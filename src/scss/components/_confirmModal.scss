@@ -1,4 +1,6 @@
 .confirmmodal.component {
   // react-modal base styling/overrides are in ./_overrides.scss
-  border: 3px solid darken($orange, 10%);
+  .modal-content {
+    border: 3px solid darken($orange, 10%);
+  }
 }
