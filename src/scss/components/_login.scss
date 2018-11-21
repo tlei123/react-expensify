@@ -1,6 +1,11 @@
 .login.component {
   .login-title {
+    background-image: url(/img/react-32x29.png);
+    background-repeat: no-repeat;
+    background-size: 24px 22px;
+    background-position: 0 0;
     margin-bottom: 0;
+    padding-left: $space-xl;
   }
 
   .login-byline {

@@ -11,7 +11,7 @@ export const Header = (props) => (
       <NavLink to="/add" activeClassName="is-active">Add Expense</NavLink>
     </div>
     <div className="header-auth">
-      <span className="header-auth-greeting">{props.auth.displayName}</span>
+      <span className="header-auth-username">{props.auth.displayName}</span>
       {props.auth.photoURL &&
         <img className="header-auth-avatar" src={props.auth.photoURL} />
       }

@@ -32,7 +32,7 @@ exports[`Should render header correctly 1`] = `
     className="header-auth"
   >
     <span
-      className="header-auth-greeting"
+      className="header-auth-username"
     >
       Joe Blow
     </span>
