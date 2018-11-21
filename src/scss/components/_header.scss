@@ -15,57 +15,68 @@
   }
 
   .header-title {
+    background-image: url(/img/react-32x29.png);
+    background-repeat: no-repeat;
+    background-size: 24px 22px;
+    background-position: 0 0;
     line-height: 1;
     margin: 0 $space-xl 0 0;
+    padding-left: $space-xl;
   }
 
   .header-nav {
     flex-grow: 1;
+    margin-top: -1.1rem;
     order: 3;
 
     @include mq("tablet") {
+      margin-top: 0;
       order: initial;
     }
   }
 
   .header-auth {
-    align-items: center;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: flex-start;
+    font-size: $font-size-sm;
+    text-align: right;
+    margin-top: -2.1rem;
     width: 100%;
 
     @include mq("tablet") {
-      align-self: flex-end;
-      justify-content: flex-end;
       margin-top: 0;
-      text-align: right;
       width: auto;
     }
 
-    .header-auth-greeting {
-      font-weight: 600;
-      margin-right: $space-xs;
+    > * {
+      margin-left: $space-xs;
+
+      @include mq("tablet") {
+        margin-left: $space-sm;
+      }
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+
+    .header-auth-username {
+      display: none;
+      font-weight: bold;
+
+      @include mq("tablet") {
+        display: inline-block;
+      }
     }
 
     .header-auth-avatar {
-      background-color: $gray2;
       border-radius: 50%;
-      display: inline-block;
-      height: 32px;
-      margin-right: $space-sm;
+      height: 3.2rem;
       vertical-align: middle;
-      width: 32px;
+      width: 3.2rem;
     }
 
-    .header-auth-btn {
-      justify-self: right;
-      margin-left: auto;
+    .button.exit {
+      margin-right: 0;
       width: auto;
-
-      @include mq("tablet") {
-        margin-right: 0;
-      }
     }
-  }
+  } // .header-auth
 }
