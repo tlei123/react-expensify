@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render alert with props 1`] = `
+<DismissableAlert
+  autoDismiss={true}
+  bsStyle="info"
+  content=""
+  dismissMessage={[Function]}
+  show={false}
+>
+  <Alert
+    bsClass="alert"
+    bsStyle="info"
+    className="dismissablealert component"
+    closeLabel="Close alert"
+    onDismiss={[Function]}
+  >
+    <div
+      className="dismissablealert component alert alert-info alert-dismissable"
+      role="alert"
+    >
+      <CloseButton
+        label="Close alert"
+        onClick={[Function]}
+      >
+        <button
+          className="close"
+          onClick={[Function]}
+          type="button"
+        >
+          <span
+            aria-hidden="true"
+          >
+            ×
+          </span>
+          <span
+            className="sr-only"
+          >
+            Close alert
+          </span>
+        </button>
+      </CloseButton>
+      <h4>
+        [test content]
+      </h4>
+    </div>
+  </Alert>
+</DismissableAlert>
+`;
+
+exports[`Should render null with default props 1`] = `
+<DismissableAlert
+  autoDismiss={true}
+  bsStyle="info"
+  content=""
+  dismissMessage={[Function]}
+  show={false}
+/>
+`;

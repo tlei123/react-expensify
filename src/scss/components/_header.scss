@@ -1,82 +1,84 @@
 .header.component {
-  align-items: baseline;
-  display: flex;
-  flex-flow: column;
-  justify-content: flex-start;
-  padding: $space-lg 0 $space-sm;
-
-  @include mq("tablet") {
-    flex-flow: row nowrap;
-  }
-
-  > * {
-    flex: 0 0 auto;
-    vertical-align: baseline;
-  }
-
-  .header-title {
-    background-image: url(/img/react-32x29.png);
-    background-repeat: no-repeat;
-    background-size: 24px 22px;
-    background-position: 0 0;
-    line-height: 1;
-    margin: 0 $space-xl 0 0;
-    padding-left: $space-xl;
-  }
-
-  .header-nav {
-    flex-grow: 1;
-    margin-top: -1.1rem;
-    order: 3;
+  header {
+    align-items: baseline;
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    padding: $space-lg 0 $space-sm;
 
     @include mq("tablet") {
-      margin-top: 0;
-      order: initial;
-    }
-  }
-
-  .header-auth {
-    font-size: $font-size-sm;
-    text-align: right;
-    margin-top: -2.1rem;
-    width: 100%;
-
-    @include mq("tablet") {
-      margin-top: 0;
-      width: auto;
+      flex-flow: row nowrap;
     }
 
     > * {
-      margin-left: $space-xs;
+      flex: 0 0 auto;
+      vertical-align: baseline;
+    }
+
+    .header-title {
+      background-image: url(/img/react-32x29.png);
+      background-repeat: no-repeat;
+      background-size: 24px 22px;
+      background-position: 0 0;
+      line-height: 1;
+      margin: 0 $space-xl 0 0;
+      padding-left: $space-xl;
+    }
+
+    .header-nav {
+      flex-grow: 1;
+      margin-top: -1.1rem;
+      order: 3;
 
       @include mq("tablet") {
-        margin-left: $space-sm;
-      }
-
-      &:first-child {
-        margin-left: 0;
+        margin-top: 0;
+        order: initial;
       }
     }
 
-    .header-auth-username {
-      display: none;
-      font-weight: bold;
+    .header-auth {
+      font-size: $font-size-sm;
+      text-align: right;
+      margin-top: -2.1rem;
+      width: 100%;
 
       @include mq("tablet") {
-        display: inline-block;
+        margin-top: 0;
+        width: auto;
       }
-    }
 
-    .header-auth-avatar {
-      border-radius: 50%;
-      height: 3.2rem;
-      vertical-align: middle;
-      width: 3.2rem;
-    }
+      > * {
+        margin-left: $space-xs;
 
-    .button.exit {
-      margin-right: 0;
-      width: auto;
-    }
-  } // .header-auth
+        @include mq("tablet") {
+          margin-left: $space-sm;
+        }
+
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+
+      .header-auth-username {
+        display: none;
+        font-weight: bold;
+
+        @include mq("tablet") {
+          display: inline-block;
+        }
+      }
+
+      .header-auth-avatar {
+        border-radius: 50%;
+        height: 3.2rem;
+        vertical-align: middle;
+        width: 3.2rem;
+      }
+
+      .button.exit {
+        margin-right: 0;
+        width: auto;
+      }
+    } // .header-auth
+  }
 }
