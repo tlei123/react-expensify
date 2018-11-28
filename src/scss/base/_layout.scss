@@ -80,6 +80,7 @@ html {
     .button {
       background-color: darken($green, 30%);
       border: 2px solid darken($green, 10%);
+      border-radius: .5rem;
       color: $white;
       cursor: pointer;
       font-weight: bold;
@@ -155,6 +156,7 @@ html {
 
   #app {
     padding: 0 $space-lg $space-lg;
+    position: relative;
 
     @include mq("tablet-wide") {
       margin-left: auto;

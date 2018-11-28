@@ -1,8 +1,11 @@
 .expensessummary.component {
   > p {
     font-size: $font-size-sm;
-    margin-bottom: $space-sm;
-    margin-top: $space-xs;
+    margin: $space-sm 0;
+
+    @include mq("tablet") {
+      margin-top: $space-md;
+    }
 
     .expensessummary-count,
     .expensessummary-amount {

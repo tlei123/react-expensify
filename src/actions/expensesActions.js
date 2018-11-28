@@ -1,5 +1,6 @@
 // Expenses actions
 import db, { arrayFromSnapshot } from '../firebase/firebase';
+import { messageAddExpense, messageEditExpense, messageRemoveExpense } from './messageActions';
 
 export const startSetExpenses = () => {
   return (dispatch, getState) => {
@@ -36,6 +37,7 @@ export const startAddExpense = (expenseData = {}) => {
           id: ref.key,
           ...newExpense
         }));
+        dispatch(messageAddExpense());
       }).
       catch((err) => {
         console.error('Could not add expense to database:', err);
@@ -54,6 +56,7 @@ export const startEditExpense = (id, updates) => {
     return db.ref(`users/${uid}/expenses/${id}`).set(updates).
       then(() => {
         dispatch(editExpense(id, updates));
+        dispatch(messageEditExpense());
       }).
       catch((err) => {
         console.error('Could not edit expense in database:', err);
@@ -73,6 +76,7 @@ export const startRemoveExpense = (({ id } = {}) => {
     return db.ref(`users/${uid}/expenses/${id}`).remove().
       then(() => {
         dispatch(removeExpense({ id }));
+        dispatch(messageRemoveExpense())
       }).
       catch((err) => {
         console.error('Could not remove expense from database:', err);

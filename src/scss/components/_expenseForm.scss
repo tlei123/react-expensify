@@ -1,5 +1,8 @@
 .expenseform.component {
   form {
+    margin-top: $space-md;
+    max-width: 40rem;
+
     > * {
       display: block;
       margin-bottom: $space-sm;
@@ -21,11 +24,10 @@
     > textarea {
       border: 0;
       padding: $space-xs;
-      width: calc(100% - #{$space-lg});
+      width: 100%;
 
       @include mq("tablet") {
         min-width: 38rem;
-        width: auto;
       }
 
       &.expenseform-amount {
