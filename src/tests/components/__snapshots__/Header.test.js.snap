@@ -38,10 +38,15 @@ exports[`Should render header correctly 1`] = `
         Joe Blow
       </span>
       <button
-        className="header-auth-btn button exit"
+        aria-label="Log Out"
+        className="header-auth-btn logout"
         onClick={[Function]}
+        title="Log Out"
       >
-        Log out
+        <Glyphicon
+          bsClass="glyphicon"
+          glyph="log-out"
+        />
       </button>
     </div>
   </header>

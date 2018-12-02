@@ -7,13 +7,11 @@ let testExpense, startEditExpense, startRemoveExpense, history, wrapper;
 beforeEach(() => {
   testExpense = testExpenses[2];
   startEditExpense = jest.fn();
-  startRemoveExpense = jest.fn();
   history = { push: jest.fn() };
   wrapper = shallow(
     <EditExpense
       expense={testExpense}
       startEditExpense={startEditExpense}
-      startRemoveExpense={startRemoveExpense}
       history={history}
     />
   );
@@ -36,31 +34,4 @@ test('Should handle startEditExpense (onSubmit) correctly', () => {
   expect.assertions(2);
   expect(history.push).toHaveBeenLastCalledWith('/');
   expect(startEditExpense).toHaveBeenLastCalledWith(testExpense.id, editedExpense);
-});
-
-test('Should present confirmation modal on remove button click', () => {
-  wrapper.setState({ showConfirmModal: false });
-  wrapper.find('button.editexpense-remove').simulate('click');
-
-  expect(wrapper.state('showConfirmModal')).toBeTruthy();
-  wrapper.setState({ showConfirmModal: false });
-});
-
-test('Should hide confirmation modal on modal-cancel', () => {
-  startRemoveExpense.mockClear();
-  wrapper.setState({ showConfirmModal: true });
-  wrapper.instance().handleRemoveCancel();
-
-  expect.assertions(2);
-  expect(wrapper.state('showConfirmModal')).toBeFalsy();
-  expect(startRemoveExpense).not.toHaveBeenCalled();
-})
-
-test('Should handle confirmed removal properly', () => {
-  startRemoveExpense.mockClear();
-  wrapper.instance().startRemove();
-
-  expect.assertions(2);
-  expect(wrapper.state('showConfirmModal')).toBeFalsy();
-  expect(startRemoveExpense).toHaveBeenCalledWith({ id: testExpense.id });
 });
