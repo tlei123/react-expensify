@@ -6,30 +6,51 @@ exports[`Should render Expense with provided props 1`] = `
   id="expense-1"
 >
   <div
-    className="expense-createdat"
+    className="expense-wrapper"
   >
-    12/31
-    :
+    <div
+      className="expense-createdat"
+    >
+      12/31
+      :
+    </div>
+    <div
+      className="expense-description"
+    >
+      Gum
+    </div>
+    <div
+      className="expense-amount"
+    >
+      $1.95
+    </div>
+    <Link
+      className="expense-edit"
+      replace={false}
+      to="/edit/1"
+    >
+      <Glyphicon
+        bsClass="glyphicon"
+        glyph="pencil"
+      />
+    </Link>
+    <button
+      className="expense-remove"
+      onClick={[Function]}
+    >
+      <Glyphicon
+        bsClass="glyphicon"
+        glyph="trash"
+      />
+    </button>
   </div>
-  <div
-    className="expense-description"
-  >
-    Gum
-  </div>
-  <div
-    className="expense-amount"
-  >
-    $1.95
-  </div>
-  <Link
-    className="expense-edit"
-    replace={false}
-    to="/edit/1"
-  >
-    <Glyphicon
-      bsClass="glyphicon"
-      glyph="pencil"
-    />
-  </Link>
+  <ConfirmModal
+    btnLabelOk="Yes, remove"
+    content="Are you sure you want to remove this expense?  This cannot be undone."
+    handleCancel={[Function]}
+    handleOk={[Function]}
+    show={false}
+    title="Confirm Remove"
+  />
 </div>
 `;
