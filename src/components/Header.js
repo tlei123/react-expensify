@@ -19,7 +19,12 @@ export const Header = (props) => (
         {props.auth.photoURL &&
           <img className="header-auth-avatar" src={props.auth.photoURL} />
         }
-        <button className="header-auth-btn logout" onClick={props.startLogout}><Glyphicon glyph="log-out" /></button>
+        <button
+          className="header-auth-btn logout"
+          aria-label="Log Out"
+          title="Log Out"
+          onClick={props.startLogout}
+        ><Glyphicon glyph="log-out" /></button>
       </div>
     </header>
 

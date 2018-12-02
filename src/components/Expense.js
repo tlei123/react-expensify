@@ -40,8 +40,22 @@ export class Expense extends React.Component {
           <div className="expense-createdat">{moment(this.props.createdAt).format('MM/DD')}:</div>
           <div className="expense-description">{this.props.description}</div>
           <div className="expense-amount">{numeral(this.props.amount / 100).format('$0,0.00')}</div>
-          <Link className="expense-edit" to={`/edit/${this.props.id}`}><Glyphicon glyph="pencil" /></Link>
-          <button onClick={this.onRemove} className="expense-remove"><Glyphicon glyph="trash" /></button>
+          <Link
+            to={`/edit/${this.props.id}`}
+            aria-label="Edit Expense"
+            title="Edit Expense"
+            className="expense-edit"
+          >
+            <Glyphicon glyph="pencil" />
+          </Link>
+          <button
+            onClick={this.onRemove}
+            aria-label="Remove Expense"
+            title="Remove Expense"
+            className="expense-remove"
+          >
+            <Glyphicon glyph="trash" />
+          </button>
         </div>
         <ConfirmModal
           show={this.state.showConfirmModal}

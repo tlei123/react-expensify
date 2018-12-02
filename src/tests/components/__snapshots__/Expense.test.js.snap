@@ -25,8 +25,10 @@ exports[`Should render Expense with provided props 1`] = `
       $1.95
     </div>
     <Link
+      aria-label="Edit Expense"
       className="expense-edit"
       replace={false}
+      title="Edit Expense"
       to="/edit/1"
     >
       <Glyphicon
@@ -35,8 +37,10 @@ exports[`Should render Expense with provided props 1`] = `
       />
     </Link>
     <button
+      aria-label="Remove Expense"
       className="expense-remove"
       onClick={[Function]}
+      title="Remove Expense"
     >
       <Glyphicon
         bsClass="glyphicon"
