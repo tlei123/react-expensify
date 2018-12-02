@@ -4,6 +4,7 @@ import { startLogout } from '../actions/authActions';
 import { NavLink } from 'react-router-dom';
 import { Alert } from 'react-bootstrap';
 import DismissableAlert from './DismissableAlert';
+import Glyphicon from 'react-bootstrap/lib/Glyphicon';
 
 export const Header = (props) => (
   <div className="header component">
@@ -18,7 +19,7 @@ export const Header = (props) => (
         {props.auth.photoURL &&
           <img className="header-auth-avatar" src={props.auth.photoURL} />
         }
-        <button className="header-auth-btn button exit" onClick={props.startLogout}>Log out</button>
+        <button className="header-auth-btn logout" onClick={props.startLogout}><Glyphicon glyph="log-out" /></button>
       </div>
     </header>
 

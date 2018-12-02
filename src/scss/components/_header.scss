@@ -27,7 +27,7 @@
 
     .header-nav {
       flex-grow: 1;
-      margin-top: -1.1rem;
+      margin-top: -.5rem;
       order: 3;
 
       @include mq("tablet") {
@@ -75,8 +75,12 @@
         width: 3.2rem;
       }
 
-      .button.exit {
+      .header-auth-btn {
+        background: none;
+        border: none;
+        font-size: $font-size-xl;
         margin-right: 0;
+        vertical-align: middle;
         width: auto;
       }
     } // .header-auth

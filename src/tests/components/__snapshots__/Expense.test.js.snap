@@ -8,7 +8,7 @@ exports[`Should render Expense with provided props 1`] = `
   <div
     className="expense-createdat"
   >
-    12/31/1969
+    12/31
     :
   </div>
   <div
@@ -26,7 +26,10 @@ exports[`Should render Expense with provided props 1`] = `
     replace={false}
     to="/edit/1"
   >
-    edit
+    <Glyphicon
+      bsClass="glyphicon"
+      glyph="pencil"
+    />
   </Link>
 </div>
 `;
