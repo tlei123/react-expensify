@@ -83,6 +83,10 @@
         margin-right: 0;
         vertical-align: middle;
         width: auto;
+
+        &:hover {
+          color: $white;
+        }
       }
     } // .header-auth
   }
