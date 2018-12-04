@@ -43,9 +43,8 @@ exports[`Should render header correctly 1`] = `
         onClick={[Function]}
         title="Log Out"
       >
-        <Glyphicon
-          bsClass="glyphicon"
-          glyph="log-out"
+        <FontAwesome
+          name="sign-out"
         />
       </button>
     </div>

@@ -31,9 +31,8 @@ exports[`Should render Expense with provided props 1`] = `
       title="Edit Expense"
       to="/edit/1"
     >
-      <Glyphicon
-        bsClass="glyphicon"
-        glyph="pencil"
+      <FontAwesome
+        name="edit"
       />
     </Link>
     <button
@@ -42,9 +41,8 @@ exports[`Should render Expense with provided props 1`] = `
       onClick={[Function]}
       title="Remove Expense"
     >
-      <Glyphicon
-        bsClass="glyphicon"
-        glyph="trash"
+      <FontAwesome
+        name="trash"
       />
     </button>
   </div>

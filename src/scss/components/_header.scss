@@ -78,14 +78,19 @@
       .header-auth-btn {
         background: none;
         border: none;
-        color: $gray4;
         font-size: $font-size-xl;
         margin-right: 0;
+        padding-right: 0;
         vertical-align: middle;
         width: auto;
 
-        &:hover {
+        &:hover .fa::before {
           color: $white;
+        }
+
+        .fa::before {
+          color: $gray4;
+          font-size: $font-size-xl;
         }
       }
     } // .header-auth

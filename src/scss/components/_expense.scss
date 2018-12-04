@@ -34,12 +34,32 @@
       }
     }
 
+    .fa {
+      font-size: $font-size-lg;
+      line-height: $font-size-lg;
+    }
+
+    .expense-edit,
+    .expense-remove {
+      margin-left: $space-xs;
+    }
+
+    .expense-edit {
+      .fa {
+        color: inherit;
+      }
+    }
+
     .expense-remove {
       background: none;
       border: none;
-      color: $orange;
+      padding: 0;
 
-      &:hover {
+      .fa::before {
+        color: $orange;
+      }
+
+      &:hover .fa::before {
         color: lighten($orange, 25%);
       }
     }
