@@ -1,4 +1,10 @@
 body {
+  // react-font-awesome (don't use react-bootstrap's Glyphicon)
+  .fa {
+    color: $white;
+    vertical-align: middle;
+  }
+
   // react-bootstrap components
   .modal-backdrop.in {
     opacity: .65;

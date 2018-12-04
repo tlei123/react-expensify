@@ -2,9 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { startLogout } from '../actions/authActions';
 import { NavLink } from 'react-router-dom';
-import { Alert } from 'react-bootstrap';
 import DismissableAlert from './DismissableAlert';
-import Glyphicon from 'react-bootstrap/lib/Glyphicon';
+import FA from 'react-fontawesome';
 
 export const Header = (props) => (
   <div className="header component">
@@ -24,7 +23,9 @@ export const Header = (props) => (
           aria-label="Log Out"
           title="Log Out"
           onClick={props.startLogout}
-        ><Glyphicon glyph="log-out" /></button>
+        >
+          <FA name="sign-out" />
+        </button>
       </div>
     </header>
 

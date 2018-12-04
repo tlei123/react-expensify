@@ -5,7 +5,7 @@ import ConfirmModal from './ConfirmModal';
 import { startRemoveExpense } from '../actions/expensesActions';
 import moment from 'moment';
 import numeral from 'numeral';
-import Glyphicon from 'react-bootstrap/lib/Glyphicon';
+import FA from 'react-fontawesome';
 
 export class Expense extends React.Component {
   constructor (props) {
@@ -46,7 +46,7 @@ export class Expense extends React.Component {
             title="Edit Expense"
             className="expense-edit"
           >
-            <Glyphicon glyph="pencil" />
+            <FA name="edit" />
           </Link>
           <button
             onClick={this.onRemove}
@@ -54,7 +54,7 @@ export class Expense extends React.Component {
             title="Remove Expense"
             className="expense-remove"
           >
-            <Glyphicon glyph="trash" />
+            <FA name="trash" />
           </button>
         </div>
         <ConfirmModal
