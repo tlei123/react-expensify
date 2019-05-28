@@ -1,5 +1,7 @@
 node_modules/
 public/dist/
+tests_output/
+*.log
 .env.test
 .env.development
 .env.production
