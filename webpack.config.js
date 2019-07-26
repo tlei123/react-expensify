@@ -1,6 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 // Conditionally set NODE_ENV.
 // process.env.NODE_ENV is predefined on Heroku as 'production', but initially undefined here in this app (locally).
@@ -18,11 +18,9 @@ if (process.env.NODE_ENV === 'test') {
 module.exports = (env) => {
   console.log('env:', env);
   const isProd = env === 'production';  // set up in package.json.
-  const CSSExtract = new ExtractTextPlugin('bundle.css');
 
   return {
     entry: [
-      'babel-polyfill',
       './src/app.js',
       './src/scss/app.scss'
     ],
@@ -38,23 +36,17 @@ module.exports = (env) => {
           exclude: /node_modules/,
         },
         {
-          use: CSSExtract.extract({
-            use: [
-              {
-                loader: 'css-loader',
-                options: {
-                  sourceMap: true
-                }
+          test: /\.(sa|sc|c)ss$/,
+          use: [
+            {
+              loader: MiniCssExtractPlugin.loader,
+              options: {
+                hmr: process.env.NODE_ENV === 'development',
               },
-              {
-                loader: 'sass-loader',
-                options: {
-                  sourceMap: true
-                }
-              }
-            ]
-          }),
-          test: /\.s?css$/,
+            },
+            'css-loader',
+            'sass-loader',
+          ],
         },
         {
           loader: 'file-loader',
@@ -67,7 +59,11 @@ module.exports = (env) => {
       ],
     },
     plugins: [
-      CSSExtract,
+      new MiniCssExtractPlugin({
+        // Options similar to the same options in webpackOptions.output
+        // all options are optional
+        filename: 'bundle.css'
+      }),
       new webpack.DefinePlugin({
         'process.env.FIREBASE_API_KEY': JSON.stringify(process.env.FIREBASE_API_KEY),
         'process.env.FIREBASE_AUTH_DOMAIN': JSON.stringify(process.env.FIREBASE_AUTH_DOMAIN),
