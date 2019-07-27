@@ -46,13 +46,18 @@
     @include mq("tablet") {
       margin-bottom: 0;
     }
-    .DateInput--with-caret.DateInput--open-down::after,
-    .DateInput--with-caret.DateInput--open-down::before {
-      top: 37px;
+
+    .DateInput {
+      padding: 0;
+
+      .DateInput_input {
+        font-size: 1.4rem;
+        padding: 1rem;
+      }
     }
 
-    .DateRangePicker__picker--open-down {
-      top: 47px;
+    .DateRangePickerInput_clearDates_svg {
+      vertical-align: -.1rem;
     }
-}
+  }
 }
