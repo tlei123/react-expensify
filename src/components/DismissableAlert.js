@@ -36,9 +36,10 @@ export class DismissableAlert extends React.Component {
     if (this.props.show) {
       return (
         <Alert
-        bsStyle={this.props.bsStyle}
-        onDismiss={this.handleDismiss}
+        variant={this.props.variant}
+        onClose={this.handleDismiss}
         className="dismissablealert component"
+        dismissible
         >
           <h4>{this.props.content}</h4>
         </Alert>
@@ -51,7 +52,7 @@ export class DismissableAlert extends React.Component {
 
 const mapStateToProps = (state) => ({
   show: state.message.show,
-  bsStyle: state.message.bsStyle,
+  variant: state.message.variant,
   content: state.message.content,
   autoDismiss: state.message.autoDismiss,
 });

@@ -1,22 +1,23 @@
 // Paddings (used for margins too)
-$space-default: 2rem;
-$space-xs: 1rem;
-$space-sm: 1.5rem;
+$space-default: 1.25rem;
+$space-xxs: $space-default * .25;
+$space-xs: $space-default * .5;
+$space-sm: $space-default * .75;
 $space-md: $space-default;
-$space-lg: 2.5rem;
-$space-xl: 3rem;
+$space-lg: $space-default * 1.25;
+$space-xl: $space-default * 1.5;
 
 // Typography
 $font-family-default: Arial, Helvetica, sans-serif;
 $font-family-headings: Arial, Helvetica, sans-serif;
-$font-size-default: 1.6rem;
-$font-size-xxs: 1rem;
-$font-size-xs: 1.2rem;
-$font-size-sm: 1.4rem;
+$font-size-default: 1rem;
+$font-size-xxs: .625rem;
+$font-size-xs: .75rem;
+$font-size-sm: .875rem;
 $font-size-md: $font-size-default;
-$font-size-lg: 1.8rem;
-$font-size-xl: 2rem;
-$font-size-xxl: 2.2rem;
+$font-size-lg: 1.125rem;
+$font-size-xl: 1.25rem;
+$font-size-xxl: 1.5rem;
 
 // Colors
 $black: #000;

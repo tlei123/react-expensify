@@ -24,7 +24,7 @@
       border: 0;
       font-size: $font-size-sm;
       overflow: hidden;
-      padding: $space-xs;
+      padding: .5rem;
 
       > option {
         font-size: inherit;
@@ -36,23 +36,10 @@
       justify-content: space-between;
 
       > input,
+      > .DateRangePicker,
       > select {
         margin-bottom: 0;
       }
     }
   }
-
-  .DateRangePicker {
-    @include mq("tablet") {
-      margin-bottom: 0;
-    }
-    .DateInput--with-caret.DateInput--open-down::after,
-    .DateInput--with-caret.DateInput--open-down::before {
-      top: 37px;
-    }
-
-    .DateRangePicker__picker--open-down {
-      top: 47px;
-    }
-}
 }

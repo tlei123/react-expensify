@@ -1,6 +1,8 @@
 const path = require('path');
 const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 // Conditionally set NODE_ENV.
 // process.env.NODE_ENV is predefined on Heroku as 'production', but initially undefined here in this app (locally).
@@ -18,17 +20,17 @@ if (process.env.NODE_ENV === 'test') {
 module.exports = (env) => {
   console.log('env:', env);
   const isProd = env === 'production';  // set up in package.json.
-  const CSSExtract = new ExtractTextPlugin('bundle.css');
 
   return {
     entry: [
-      'babel-polyfill',
       './src/app.js',
       './src/scss/app.scss'
     ],
     output: {
-      path: path.join(__dirname, 'public', 'dist'),
-      filename: 'bundle.js'
+      path: path.join(__dirname, 'public'),
+      filename: isProd
+        ? 'bundle.[contenthash].js'
+        : 'bundle.js'
     },
     module: {
       rules: [
@@ -38,23 +40,17 @@ module.exports = (env) => {
           exclude: /node_modules/,
         },
         {
-          use: CSSExtract.extract({
-            use: [
-              {
-                loader: 'css-loader',
-                options: {
-                  sourceMap: true
-                }
+          test: /\.(sa|sc|c)ss$/,
+          use: [
+            {
+              loader: MiniCssExtractPlugin.loader,
+              options: {
+                hmr: process.env.NODE_ENV === 'development',
               },
-              {
-                loader: 'sass-loader',
-                options: {
-                  sourceMap: true
-                }
-              }
-            ]
-          }),
-          test: /\.s?css$/,
+            },
+            'css-loader',
+            'sass-loader',
+          ],
         },
         {
           loader: 'file-loader',
@@ -67,7 +63,26 @@ module.exports = (env) => {
       ],
     },
     plugins: [
-      CSSExtract,
+      new CleanWebpackPlugin({
+        verbose:true,
+        cleanOnceBeforeBuildPatterns: [
+          '**/*',
+          '!img*',
+          '!**/*.gif',
+          '!**/*.ico',
+          '!**/*.jpg',
+          '!**/*.png',
+          '!**/*.svg',
+          '!**/*.tif'
+        ]
+      }),
+      new MiniCssExtractPlugin({
+        // Options similar to the same options in webpackOptions.output
+        // all options are optional
+        filename: isProd
+          ? 'bundle.[contenthash].css'
+          : 'bundle.css'
+      }),
       new webpack.DefinePlugin({
         'process.env.FIREBASE_API_KEY': JSON.stringify(process.env.FIREBASE_API_KEY),
         'process.env.FIREBASE_AUTH_DOMAIN': JSON.stringify(process.env.FIREBASE_AUTH_DOMAIN),
@@ -75,6 +90,10 @@ module.exports = (env) => {
         'process.env.FIREBASE_PROJECT_ID': JSON.stringify(process.env.FIREBASE_PROJECT_ID),
         'process.env.FIREBASE_STORAGE_BUCKET': JSON.stringify(process.env.FIREBASE_STORAGE_BUCKET),
         'process.env.FIREBASE_MESSAGING_SENDER_ID': JSON.stringify(process.env.FIREBASE_MESSAGING_SENDER_ID)
+      }),
+      new HtmlWebpackPlugin({
+        template: 'src/index.html',
+        title: 'React-Expensify demo - Tze1.com'
       })
     ],
     devtool: isProd ? 'source-map' : 'inline-source-map',
@@ -82,7 +101,7 @@ module.exports = (env) => {
       contentBase: path.join(__dirname, 'public'),
       historyApiFallback: true,
       port: 8888,
-      publicPath: '/dist/'
+      publicPath: ''
     },
   };
 }

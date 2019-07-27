@@ -1,10 +1,10 @@
 @import './base/font-awesome';
-@import './base/bootstrap';
-@import './base/datepicker';
 @import './base/variables';
 @import './base/mixins';
-@import './base/layout';
 @import './base/overrides';
+@import 'node_modules/bootstrap/scss/bootstrap';
+@import './base/layout';
+@import './base/datepicker';
 @import './components/loader';
 @import './components/dismissableAlert';
 @import './components/confirmModal';
