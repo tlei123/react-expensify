@@ -1,5 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 // Conditionally set NODE_ENV.
@@ -25,8 +27,10 @@ module.exports = (env) => {
       './src/scss/app.scss'
     ],
     output: {
-      path: path.join(__dirname, 'public', 'dist'),
-      filename: 'bundle.js'
+      path: path.join(__dirname, 'public'),
+      filename: isProd
+        ? 'bundle.[contenthash].js'
+        : 'bundle.js'
     },
     module: {
       rules: [
@@ -59,10 +63,25 @@ module.exports = (env) => {
       ],
     },
     plugins: [
+      new CleanWebpackPlugin({
+        verbose:true,
+        cleanOnceBeforeBuildPatterns: [
+          '**/*',
+          '!img*',
+          '!**/*.gif',
+          '!**/*.ico',
+          '!**/*.jpg',
+          '!**/*.png',
+          '!**/*.svg',
+          '!**/*.tif'
+        ]
+      }),
       new MiniCssExtractPlugin({
         // Options similar to the same options in webpackOptions.output
         // all options are optional
-        filename: 'bundle.css'
+        filename: isProd
+          ? 'bundle.[contenthash].css'
+          : 'bundle.css'
       }),
       new webpack.DefinePlugin({
         'process.env.FIREBASE_API_KEY': JSON.stringify(process.env.FIREBASE_API_KEY),
@@ -71,6 +90,10 @@ module.exports = (env) => {
         'process.env.FIREBASE_PROJECT_ID': JSON.stringify(process.env.FIREBASE_PROJECT_ID),
         'process.env.FIREBASE_STORAGE_BUCKET': JSON.stringify(process.env.FIREBASE_STORAGE_BUCKET),
         'process.env.FIREBASE_MESSAGING_SENDER_ID': JSON.stringify(process.env.FIREBASE_MESSAGING_SENDER_ID)
+      }),
+      new HtmlWebpackPlugin({
+        template: 'src/index.html',
+        title: 'React-Expensify demo - Tze1.com'
       })
     ],
     devtool: isProd ? 'source-map' : 'inline-source-map',
@@ -78,7 +101,7 @@ module.exports = (env) => {
       contentBase: path.join(__dirname, 'public'),
       historyApiFallback: true,
       port: 8888,
-      publicPath: '/dist/'
+      publicPath: ''
     },
   };
 }

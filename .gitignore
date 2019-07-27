@@ -1,5 +1,10 @@
 node_modules/
 public/dist/
+public/fonts/
+public/index.html
+public/**/bundle.*js
+public/**/bundle.*css
+public/**/bundle.*map
 .env.test
 .env.development
 .env.production

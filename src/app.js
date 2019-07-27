@@ -12,7 +12,7 @@ import Loader from './components/Loader';
 import './scss/app.scss';
 
 const store = configureStore();
-console.log('Initial state:', store.getState());
+// console.log('Initial state:', store.getState());
 
 const unsubscribe = store.subscribe(() => {
   const state = store.getState();
@@ -45,11 +45,11 @@ firebase.auth().onAuthStateChanged((user) => {
         history.push('/dashboard');
       }
     });
-    console.log('User logged in.');
+    // console.log('User logged in.');
   } else {
     store.dispatch(logout());
     renderApp();
     history.push('/');
-    console.log('User logged out.');
+    // console.log('User logged out.');
   }
 });
