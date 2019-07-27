@@ -1,6 +1,6 @@
 const messageDefaultState = {
   show: false,
-  bsStyle: 'info',
+  variant: 'info',
   content: '',
   autoDismiss: true,
 };
@@ -11,7 +11,7 @@ export default (state = messageDefaultState, action) => {
       return {
         ...state,
         show: true,
-        bsStyle: 'success',
+        variant: 'success',
         content: 'Expense Added',
         autoDismiss: true,
       };
@@ -19,7 +19,7 @@ export default (state = messageDefaultState, action) => {
       return {
         ...state,
         show: true,
-        bsStyle: 'success',
+        variant: 'success',
         content: 'Expense Edited',
         autoDismiss: true,
       };
@@ -27,7 +27,7 @@ export default (state = messageDefaultState, action) => {
       return {
         ...state,
         show: true,
-        bsStyle: 'success',
+        variant: 'success',
         content: 'Expense Removed',
         autoDismiss: true,
       };
