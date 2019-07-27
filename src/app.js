@@ -17,8 +17,8 @@ const store = configureStore();
 const unsubscribe = store.subscribe(() => {
   const state = store.getState();
   const filteredExpenses = filterExpenses(state.expenses, state.filters);
-  console.log('New state:', store.getState());
-  console.log('  Filtered expenses:', filteredExpenses);
+  // console.log('New state:', store.getState());
+  // console.log('  Filtered expenses:', filteredExpenses);
 });
 
 const jsx = (
