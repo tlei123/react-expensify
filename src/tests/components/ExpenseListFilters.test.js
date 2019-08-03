@@ -79,7 +79,7 @@ test('Should handle date changes', () => {
     filters: defaultFilters
   });
 
-  wrapper.find('DateRangePicker').prop('onDatesChange')({
+  wrapper.find('withStyles(DateRangePicker)').prop('onDatesChange')({
     startDate: altFilters.startDate,
     endDate: altFilters.endDate
   });
@@ -95,7 +95,7 @@ test('Should handle DateRangePicker focus-change', () => {
     filters: defaultFilters
   });
 
-  wrapper.find('DateRangePicker').prop('onFocusChange')(calendarFocusedVal);
+  wrapper.find('withStyles(DateRangePicker)').prop('onFocusChange')(calendarFocusedVal);
 
   expect(wrapper.state('calendarFocused')).toBe(calendarFocusedVal);
 });

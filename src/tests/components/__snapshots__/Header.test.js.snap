@@ -15,7 +15,6 @@ exports[`Should render header correctly 1`] = `
     >
       <NavLink
         activeClassName="is-active"
-        ariaCurrent="true"
         to="/dashboard"
       >
         Dashboard
@@ -23,7 +22,6 @@ exports[`Should render header correctly 1`] = `
        | 
       <NavLink
         activeClassName="is-active"
-        ariaCurrent="true"
         to="/add"
       >
         Add Expense

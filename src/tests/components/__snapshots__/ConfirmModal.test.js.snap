@@ -1,50 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Should render properly with default prop values 1`] = `
-<Modal
-  animation={true}
-  autoFocus={true}
-  backdrop={true}
-  bsClass="modal"
+<Bootstrap(Modal)
   className="confirmmodal component"
-  dialogComponentClass={[Function]}
-  enforceFocus={true}
-  keyboard={true}
-  manager={
-    ModalManager {
-      "add": [Function],
-      "containers": Array [],
-      "data": Array [],
-      "handleContainerOverflow": true,
-      "hideSiblingNodes": true,
-      "isTopModal": [Function],
-      "modals": Array [],
-      "remove": [Function],
-    }
-  }
-  onHide={[Function]}
-  renderBackdrop={[Function]}
-  restoreFocus={true}
   show={true}
 >
   <ModalHeader
-    bsClass="modal-header"
     className="modal-header"
     closeButton={false}
     closeLabel="Close"
   >
     <ModalTitle
-      bsClass="modal-title"
       className="modal-title"
-      componentClass="h4"
     >
       Confirm
     </ModalTitle>
   </ModalHeader>
   <ModalBody
-    bsClass="modal-body"
     className="modal-body"
-    componentClass="div"
   >
     <p
       className="modal-message"
@@ -53,81 +26,50 @@ exports[`Should render properly with default prop values 1`] = `
     </p>
   </ModalBody>
   <ModalFooter
-    bsClass="modal-footer"
     className="modal-footer"
-    componentClass="div"
   >
     <Button
       active={false}
-      block={false}
-      bsClass="btn"
-      bsStyle="default"
       className="modal-cancel button exit"
       disabled={false}
-      onClick={[Function]}
+      onClick={[MockFunction]}
+      type="button"
+      variant="primary"
     >
       Cancel
     </Button>
     <Button
       active={false}
-      block={false}
-      bsClass="btn"
-      bsStyle="default"
       className="modal-ok button danger"
       disabled={false}
-      onClick={[Function]}
+      onClick={[MockFunction]}
+      type="button"
+      variant="primary"
     >
       OK
     </Button>
   </ModalFooter>
-</Modal>
+</Bootstrap(Modal)>
 `;
 
 exports[`Should render properly with optional prop values 1`] = `
-<Modal
-  animation={true}
-  autoFocus={true}
-  backdrop={true}
-  bsClass="modal"
+<Bootstrap(Modal)
   className="confirmmodal component"
-  dialogComponentClass={[Function]}
-  enforceFocus={true}
-  keyboard={true}
-  manager={
-    ModalManager {
-      "add": [Function],
-      "containers": Array [],
-      "data": Array [],
-      "handleContainerOverflow": true,
-      "hideSiblingNodes": true,
-      "isTopModal": [Function],
-      "modals": Array [],
-      "remove": [Function],
-    }
-  }
-  onHide={[Function]}
-  renderBackdrop={[Function]}
-  restoreFocus={true}
   show={true}
 >
   <ModalHeader
-    bsClass="modal-header"
     className="modal-header"
     closeButton={false}
     closeLabel="Close"
   >
     <ModalTitle
-      bsClass="modal-title"
       className="modal-title"
-      componentClass="h4"
     >
       test
     </ModalTitle>
   </ModalHeader>
   <ModalBody
-    bsClass="modal-body"
     className="modal-body"
-    componentClass="div"
   >
     <p
       className="modal-message"
@@ -136,32 +78,28 @@ exports[`Should render properly with optional prop values 1`] = `
     </p>
   </ModalBody>
   <ModalFooter
-    bsClass="modal-footer"
     className="modal-footer"
-    componentClass="div"
   >
     <Button
       active={false}
-      block={false}
-      bsClass="btn"
-      bsStyle="default"
       className="modal-cancel button exit"
       disabled={false}
-      onClick={[Function]}
+      onClick={[MockFunction]}
+      type="button"
+      variant="primary"
     >
       no
     </Button>
     <Button
       active={false}
-      block={false}
-      bsClass="btn"
-      bsStyle="default"
       className="modal-ok button danger"
       disabled={false}
-      onClick={[Function]}
+      onClick={[MockFunction]}
+      type="button"
+      variant="primary"
     >
       yes
     </Button>
   </ModalFooter>
-</Modal>
+</Bootstrap(Modal)>
 `;

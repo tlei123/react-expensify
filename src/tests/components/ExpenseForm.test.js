@@ -96,7 +96,7 @@ test('Should set createdAt state on datepicker-change', () => {
   const wrapper = shallow(<ExpenseForm />),
     now = moment();
 
-  wrapper.find('SingleDatePicker').prop('onDateChange')(now);
+  wrapper.find('withStyles(SingleDatePicker)').prop('onDateChange')(now);
 
   expect(wrapper.state('createdAt')).toEqual(now);
 });
@@ -104,7 +104,7 @@ test('Should set createdAt state on datepicker-change', () => {
 test('Should set calendarFocused state on datepicker-focus', () => {
   const wrapper = shallow(<ExpenseForm />);
 
-  wrapper.find('SingleDatePicker').prop('onFocusChange')({ focused: true });
+  wrapper.find('withStyles(SingleDatePicker)').prop('onFocusChange')({ focused: true });
 
   expect(wrapper.state('calendarFocused')).toBe(true);
 });
