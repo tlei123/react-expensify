@@ -9,5 +9,8 @@
   "testPathIgnorePatterns": [
       "/node_modules/",
       ".e2e."
-  ]
+  ],
+  "moduleNameMapper": {
+    "\\.(css|less|sass|scss)$": "<rootDir>/src/tests/__mocks__/stylesheetMock.js"
+  }
 }

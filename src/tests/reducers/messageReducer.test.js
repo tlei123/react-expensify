@@ -2,7 +2,7 @@ import messageReducer from '../../reducers/messageReducer';
 
 const defaultState = {
   show: false,
-  bsStyle: 'info',
+  variant: 'info',
   content: '',
   autoDismiss: true,
 };
@@ -16,7 +16,7 @@ test('Should set up default state properly on init', () => {
 test('Should set state properly upon messageAddExpense action', () => {
   const expectedState = {
     show: true,
-    bsStyle: 'success',
+    variant: 'success',
     content: 'Expense Added',
     autoDismiss: true,
   };
@@ -28,7 +28,7 @@ test('Should set state properly upon messageAddExpense action', () => {
 test('Should set state properly upon messageEditExpense action', () => {
   const expectedState = {
     show: true,
-    bsStyle: 'success',
+    variant: 'success',
     content: 'Expense Edited',
     autoDismiss: true,
   };
@@ -40,7 +40,7 @@ test('Should set state properly upon messageEditExpense action', () => {
 test('Should set state properly upon messageRemoveExpense action', () => {
   const expectedState = {
     show: true,
-    bsStyle: 'success',
+    variant: 'success',
     content: 'Expense Removed',
     autoDismiss: true,
 };

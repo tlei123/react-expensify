@@ -4,46 +4,72 @@ exports[`Should render alert with props 1`] = `
 <DismissableAlert
   autoDismiss={true}
   bsStyle="info"
-  content=""
-  dismissMessage={[Function]}
-  show={false}
+  content="[test content]"
+  dismissMessage={[MockFunction]}
+  show={true}
 >
   <Alert
-    bsClass="alert"
-    bsStyle="info"
     className="dismissablealert component"
     closeLabel="Close alert"
-    onDismiss={[Function]}
+    dismissible={true}
+    onClose={[Function]}
+    show={true}
+    transition={[Function]}
   >
-    <div
-      className="dismissablealert component alert alert-info alert-dismissable"
-      role="alert"
+    <Fade
+      appear={false}
+      in={true}
+      mountOnEnter={false}
+      timeout={300}
+      unmountOnExit={true}
     >
-      <CloseButton
-        label="Close alert"
-        onClick={[Function]}
+      <Transition
+        addEndListener={[Function]}
+        appear={false}
+        enter={true}
+        exit={true}
+        in={true}
+        mountOnEnter={false}
+        onEnter={[Function]}
+        onEntered={[Function]}
+        onEntering={[Function]}
+        onExit={[Function]}
+        onExited={[Function]}
+        onExiting={[Function]}
+        timeout={300}
+        unmountOnExit={true}
       >
-        <button
-          className="close"
-          onClick={[Function]}
-          type="button"
+        <div
+          className="fade dismissablealert component alert alert-dismissible show"
+          role="alert"
         >
-          <span
-            aria-hidden="true"
+          <CloseButton
+            label="Close alert"
+            onClick={[Function]}
           >
-            ×
-          </span>
-          <span
-            className="sr-only"
-          >
-            Close alert
-          </span>
-        </button>
-      </CloseButton>
-      <h4>
-        [test content]
-      </h4>
-    </div>
+            <button
+              className="close"
+              onClick={[Function]}
+              type="button"
+            >
+              <span
+                aria-hidden="true"
+              >
+                ×
+              </span>
+              <span
+                className="sr-only"
+              >
+                Close alert
+              </span>
+            </button>
+          </CloseButton>
+          <h4>
+            [test content]
+          </h4>
+        </div>
+      </Transition>
+    </Fade>
   </Alert>
 </DismissableAlert>
 `;
@@ -53,7 +79,7 @@ exports[`Should render null with default props 1`] = `
   autoDismiss={true}
   bsStyle="info"
   content=""
-  dismissMessage={[Function]}
+  dismissMessage={[MockFunction]}
   show={false}
 />
 `;

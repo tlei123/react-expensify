@@ -27,7 +27,6 @@ exports[`Should render Expense with provided props 1`] = `
     <Link
       aria-label="Edit Expense"
       className="expense-edit"
-      replace={false}
       title="Edit Expense"
       to="/edit/1"
     >
