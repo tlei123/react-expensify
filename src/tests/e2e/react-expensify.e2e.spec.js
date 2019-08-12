@@ -1,5 +1,6 @@
+// IMPORTANT: Log out of your personal Google account before running test.
 // TODO: Populate this suite w/ real tests.
-var Helpers = require('./helpers');
+const Helpers = require('./helpers.js');
 var testExpenses = require('../fixtures/testExpenses');
 
 module.exports = {
@@ -9,12 +10,9 @@ module.exports = {
       .waitForElementVisible('body')
       .expect.element('h1.login-title').text.to.contain('React-Expensify');
 
-    Helpers.login(client)
-    	.click('a[href="/add"]')
-    	.waitForElementVisible('.expenseform.component', 500);
-
-    Helpers.fillExpenses(client, testExpenses);
-
-    client.end();
+    // Login
+    Helpers.login(client);
+    
+    client.waitForElementVisible('.expensedashboard.component', 10000);
   }
 };
