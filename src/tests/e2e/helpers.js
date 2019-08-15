@@ -20,13 +20,13 @@ function login (client) {
       .click(loginBtnSelector);
 
     switchTestWindow(client, 1);
-    client.waitForElementVisible(usernameInputSelector, 10000, function () {
+    client.waitForElementVisible(usernameInputSelector, 10000, false, function () {
       client.setValue(usernameInputSelector, 'tze1testuser1@gmail.com', function () {
         client.keys(client.Keys.ENTER);
       });
     });
     client.pause(1000);
-    client.waitForElementVisible(passwordInputSelector, 5000, function () {
+    client.waitForElementVisible(passwordInputSelector, 5000, false, function () {
       client.setValue(passwordInputSelector, 'k;klL*6bP7Y', function () {
         client.keys(client.Keys.ENTER, function () {
           switchTestWindow(client, 0);
