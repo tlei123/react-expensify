@@ -1,7 +1,10 @@
-// IMPORTANT: Log out of your personal Google account before running test.
-// TODO: Populate this suite w/ real tests.
+// IMPORTANT - Before starting this e2e test:
+// 1.  Log out of your personal Google account; and
+// 2.  Until a delete-all-expenses helper has been implemented,
+//     delete ALL expenses.
+
 const Helpers = require('./helpers.js');
-var testExpenses = require('../fixtures/testExpenses');
+const { e2eTestExpenses } = require('../fixtures/e2eTestExpenses');
 
 module.exports = {
   'Start-up & Login': function (client) {
@@ -22,14 +25,23 @@ module.exports = {
       );
   },
 
-  'Add expense': function (client) {
-    client.waitForElementVisible('.header-nav a[href="/add"]', 500)
-      .click('.header-nav a[href="/add"]')
-      .waitForElementVisible('.expenseform.component', 1000);
-    client.expect.element('input[name=date]').to.be.visible;
-    client.expect.element('input[name=description]').to.be.visible;
-    client.expect.element('input[name=amount]').to.be.visible;
-    client.expect.element('textarea[name=note]').to.be.visible;
-    client.expect.element('button[type=submit]').to.be.visible;
-  }
+  'Add Expenses': function (client) {
+    e2eTestExpenses.forEach(expense => {
+      client.waitForElementVisible('.header-nav a[href="/add"]', 500)
+        .click('.header-nav a[href="/add"]')
+        .waitForElementVisible('.expenseform.component', 1000, false, () => {
+          Helpers.fillExpense(client, expense)
+            .then((resolveValue) => {
+              console.log(resolveValue);
+            });
+        });
+    });
+
+    client.expect.elements('.expense-wrapper')
+      .count.to.equal(e2eTestExpenses.length);
+
+    // Until delete-all-expenses helper is available,
+    // leverage pause below to manually delete all expenses in test-window.
+    client.pause(15000).end();
+  },
 };

@@ -4,6 +4,8 @@ function switchTestWindow (client, index) {
   })
 }
 
+// TODO: Add helper to delete ALL expenses for test start.
+
 function login (client) {
   return new Promise(function (resolve, reject) {
     // Homepage (Login) element selectors.
@@ -20,29 +22,54 @@ function login (client) {
       .click(loginBtnSelector);
 
     switchTestWindow(client, 1);
-    client.waitForElementVisible(usernameInputSelector, 10000, false, function () {
-      client.setValue(usernameInputSelector, 'tze1testuser1@gmail.com', function () {
-        client.keys(client.Keys.ENTER);
-      });
+    client.waitForElementVisible(usernameInputSelector, 10000, false, () => {
+      client.setValue(
+        usernameInputSelector,
+        ['tze1testuser1@gmail.com', client.Keys.ENTER],
+        () => {
+          // Allow for Firebase Auth processing & DOM-change, so as to
+          // avoid state-element-reference error on next weitFormElementVisible.
+          client.pause(1500);
+        }
+      );
     });
-    client.pause(1000);
-    client.waitForElementVisible(passwordInputSelector, 5000, false, function () {
-      client.setValue(passwordInputSelector, 'k;klL*6bP7Y', function () {
-        client.keys(client.Keys.ENTER, function () {
+    client.waitForElementVisible(passwordInputSelector, 5000, false, () => {
+      client.setValue(
+        passwordInputSelector,
+        ['k;klL*6bP7Y', client.Keys.ENTER],
+        () => {
           switchTestWindow(client, 0);
           resolve('Login finished.');
-        });
       });
     });
   });
 }
 
-function fillExpenses (client, testExpenses) {
-  return client;
+function fillExpense (client, expense) {
+  return new Promise((resolve) => {
+    const dateFieldSelector = 'input[name=date]';
+    const descriptionFieldSelector = 'input[name=description]';
+    const amountFieldSelector = 'input[name=amount]';
+    const noteFieldSelector = 'textarea[name=note]';
+    const submitButtonSelector = 'button[type=submit]';
+    const expenselistSelector = '.expenselist.component';
+
+    client
+      .setValue(dateFieldSelector, expense.createdAt)
+      .click(descriptionFieldSelector)
+      .setValue(descriptionFieldSelector, expense.description)
+      .setValue(amountFieldSelector, expense.amount)
+      .setValue(noteFieldSelector, expense.note)
+      .click(submitButtonSelector)
+      .pause(100)
+      .waitForElementVisible(expenselistSelector, 10000, false, () => {
+        resolve('Expense submitted.');
+      });
+  });
 }
 
 module.exports = {
   switchTestWindow,
   login,
-  fillExpenses,
+  fillExpense,
 };
