@@ -1,13 +1,10 @@
-// IMPORTANT - Before starting this e2e test:
-// 1.  Log out of your personal Google account; and
-// 2.  Until a delete-all-expenses helper has been implemented,
-//     delete ALL expenses.
+// IMPORTANT - Log out of your personal Google account before testing.
 
 const Helpers = require('./helpers.js');
 const { e2eTestExpenses } = require('../fixtures/e2eTestExpenses');
 
 module.exports = {
-  'Start-up & Login': function (client) {
+  'Start-up, Login, & Clear Expenses': function (client) {
     client
       .url('localhost:8888')
       .waitForElementVisible('body')
@@ -23,6 +20,8 @@ module.exports = {
           );
         }
       );
+
+    Helpers.clearExpenses(client);
   },
 
   'Add Expenses': function (client) {
@@ -39,9 +38,5 @@ module.exports = {
 
     client.expect.elements('.expense-wrapper')
       .count.to.equal(e2eTestExpenses.length);
-
-    // Until delete-all-expenses helper is available,
-    // leverage pause below to manually delete all expenses in test-window.
-    client.pause(15000).end();
   },
 };

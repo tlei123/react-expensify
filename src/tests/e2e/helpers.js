@@ -4,8 +4,6 @@ function switchTestWindow (client, index) {
   })
 }
 
-// TODO: Add helper to delete ALL expenses for test start.
-
 function login (client) {
   return new Promise(function (resolve, reject) {
     // Homepage (Login) element selectors.
@@ -45,6 +43,36 @@ function login (client) {
   });
 }
 
+function clearExpenses (client) {
+  // Dashboard element selectors
+  const clearFilterButton = '.DateRangePickerInput_clearDates';
+  const expenseComponent = '.expense.component';
+  const deleteButton = '.expense-remove';
+  const topDeleteButton = `${expenseComponent}:first-child ${deleteButton}`;
+  const confirmButton = 'button.modal-ok';
+  const alertCloseButton = '.alert button.close';
+
+  let expenseWrappersLength = 0;
+
+  client
+    .click(clearFilterButton)
+    .elements('css selector', expenseComponent, result => {
+      expenseWrappersLength = result.value.length;
+      if (expenseWrappersLength > 0) {
+        for (let i = 0; i < expenseWrappersLength; i++) {
+          client
+            .click(topDeleteButton)
+            .pause(50)
+            .click(confirmButton)
+            .pause(50)
+            .click(alertCloseButton)
+            .pause(50);
+        }
+      }
+    })
+    .expect.elements(expenseComponent).count.to.equal(0);
+}
+
 function fillExpense (client, expense) {
   return new Promise((resolve) => {
     const dateFieldSelector = 'input[name=date]';
@@ -55,6 +83,7 @@ function fillExpense (client, expense) {
     const expenselistSelector = '.expenselist.component';
 
     client
+      .clearValue(dateFieldSelector)
       .setValue(dateFieldSelector, expense.createdAt)
       .click(descriptionFieldSelector)
       .setValue(descriptionFieldSelector, expense.description)
@@ -71,5 +100,6 @@ function fillExpense (client, expense) {
 module.exports = {
   switchTestWindow,
   login,
+  clearExpenses,
   fillExpense,
 };
