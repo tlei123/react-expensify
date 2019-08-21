@@ -1,3 +1,5 @@
+// TODO: Modularize all CSS selecors for reuse across test-files.
+
 function switchTestWindow (client, index) {
   client.windowHandles(function (result) {
     client.switchWindow(result.value[index]);
