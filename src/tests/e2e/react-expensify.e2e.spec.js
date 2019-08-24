@@ -1,39 +1,23 @@
-// IMPORTANT - Log out of your personal Google account before testing.
+// Start local dev, ensure you're logged out, then run test.
 const moment = require('moment');
 
 const Helpers = require('./helpers.js');
 const { e2eTestExpenses } = require('../fixtures/e2eTestExpenses');
 
-// CSS Selectors
-// TODO: Modularize all selecors for reuse across test-files.
-const loginPageTitle = 'h1.login-title';
-const addExpenseNavLink = '.header-nav a[href="/add"]';
-const dashboard = '.expensedashboard.component';
-const expenseWrapper = '.expense-wrapper';
-const editButton = '.expense-edit';
-const expenseForm = '.expenseform.component';
-const date = '.expense-createdat';
-const description = '.expense-description';
-const amount = '.expense-amount';
-const dateField = 'input[name=date]';
-const descriptionField = 'input[name=description]';
-const amountField = 'input[name=amount]';
-const noteField = 'textarea[name=note]';
-const submitButton = 'button[type=submit]';
-const expenseList = '.expenselist.component';
+const sel = Helpers.selectors;
 
 module.exports = {
   'Start-up, Login, & Delete All Expenses': function (client) {
     client
       .url('localhost:8888')
       .waitForElementVisible('body')
-      .expect.element(loginPageTitle).text.to.contain('React-Expensify');
+      .expect.element(sel.loginPgTitle).text.to.contain('React-Expensify');
 
     Helpers.login(client)
       .then(
         function () {
           client.waitForElementVisible(
-            dashboard,
+            sel.dashboardCmp,
             10000,
             false
           );
@@ -45,9 +29,9 @@ module.exports = {
 
   'Add Expenses': function (client) {
     e2eTestExpenses.forEach(expense => {
-      client.waitForElementVisible(addExpenseNavLink, 500)
-        .click(addExpenseNavLink)
-        .waitForElementVisible(expenseForm, 1000, false, () => {
+      client.waitForElementVisible(sel.addExpenseLnk, 500)
+        .click(sel.addExpenseLnk)
+        .waitForElementVisible(sel.expenseFormCmp, 1000, false, () => {
           Helpers.fillExpense(client, expense)
             .then((resolveValue) => {
               console.log(resolveValue);
@@ -55,13 +39,13 @@ module.exports = {
         });
     });
 
-    client.expect.elements(expenseWrapper)
+    client.expect.elements(sel.expenseCmp)
       .count.to.equal(e2eTestExpenses.length);
   },
 
   'Edit Expense': function (client) {
-    const firstExpense = `${expenseWrapper}:first-of-type`;
-    const firstEditButton = `${firstExpense} ${editButton}`;
+    const firstExpense = `${sel.expenseCmp}:first-child`;
+    const firstEditButton = `${firstExpense} ${sel.editBtn}`;
     const updatedExpense = {
       createdAt: moment().add(1, 'days').format('L'),
       description: 'Listerine Strips',
@@ -70,28 +54,28 @@ module.exports = {
 
     client.waitForElementVisible(firstEditButton, 500)
       .click(firstEditButton)
-      .waitForElementVisible(expenseForm, 500)
-      .clearValue(dateField)
-      .setValue(dateField, updatedExpense.createdAt)
-      .click(descriptionField)
-      .clearValue(descriptionField)
-      .setValue(descriptionField, updatedExpense.description)
-      .clearValue(amountField)
-      .setValue(amountField, updatedExpense.amount)
-      .click(submitButton)
+      .waitForElementVisible(sel.expenseFormCmp, 500)
+      .clearValue(sel.dateFld)
+      .setValue(sel.dateFld, updatedExpense.createdAt)
+      .click(sel.descriptionFld)
+      .clearValue(sel.descriptionFld)
+      .setValue(sel.descriptionFld, updatedExpense.description)
+      .clearValue(sel.amountFld)
+      .setValue(sel.amountFld, updatedExpense.amount)
+      .click(sel.submitBtn)
       .pause(100)
-      .waitForElementVisible(expenseList, 10000, false, () => {
+      .waitForElementVisible(sel.expenseListCmp, 10000, false, () => {
         client
           .assert.containsText(
-            `${firstExpense} ${date}`,
+            `${firstExpense} ${sel.date}`,
             updatedExpense.createdAt.substring(0, 5),
           )
           .assert.containsText(
-            `${firstExpense} ${description}`,
+            `${firstExpense} ${sel.description}`,
             updatedExpense.description,
           )
           .assert.containsText(
-            `${firstExpense} ${amount}`,
+            `${firstExpense} ${sel.amount}`,
             updatedExpense.amount,
           );
       });
