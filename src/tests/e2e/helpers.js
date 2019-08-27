@@ -9,7 +9,10 @@ const selectors = {
   addExpenseLnk: '.header-nav a[href="/add"]',
 
   dashboardCmp: '.expensedashboard.component',
+  textFilter: '[placeholder="filter by text"]',
   clearFilterBtn: '.DateRangePickerInput_clearDates',
+  sortMenu: '[name=sortby]',
+  sortOption: '[name=sortby] option',
   expenseListCmp: '.expenselist.component',
   expenseCmp: '.expense.component',
   date: '.expense-createdat',
@@ -37,7 +40,6 @@ function switchTestWindow (client, index) {
 }
 
 function login (client) {
-
   return new Promise(function (resolve, reject) {
     const s = selectors;
 

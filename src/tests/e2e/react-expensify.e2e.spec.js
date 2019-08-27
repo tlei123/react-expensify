@@ -43,6 +43,35 @@ module.exports = {
       .count.to.equal(e2eTestExpenses.length);
   },
 
+  'Sort Expenses': function (client) {
+    client.waitForElementNotVisible('.DateRangePickerInput_clearDates', 500);
+    client.expect.element(sel.sortMenu)
+      .to.have.value.that.equals('date');
+    client.expect.element(`${sel.expenseCmp}:first-of-type ${sel.description}`)
+      .text.to.equal('Gum');
+    client.expect.element(`${sel.expenseCmp}:nth-of-type(2) ${sel.description}`)
+      .text.to.equal('Rent');
+    client.expect.element(`${sel.expenseCmp}:nth-of-type(3) ${sel.description}`)
+      .text.to.equal('Credit card');
+
+    client.click(sel.sortMenu, function () {
+        client.click(`${sel.sortOption}[value=amount]`);
+      })
+      .expect.element(sel.sortMenu)
+      .to.have.value.that.equals('amount')
+      .before(500);
+    client.expect.element(`${sel.expenseCmp}:first-of-type ${sel.description}`)
+      .text.to.equal('Rent');
+    client.expect.element(`${sel.expenseCmp}:nth-of-type(2) ${sel.description}`)
+      .text.to.equal('Credit card');
+    client.expect.element(`${sel.expenseCmp}:nth-of-type(3) ${sel.description}`)
+      .text.to.equal('Gum');
+
+    client.click(sel.sortMenu, function () {
+        client.click(`${sel.sortOption}[value=date]`);
+      });
+  },
+
   'Edit Expense': function (client) {
     const firstExpense = `${sel.expenseCmp}:first-child`;
     const firstEditButton = `${firstExpense} ${sel.editBtn}`;
@@ -79,5 +108,5 @@ module.exports = {
             updatedExpense.amount,
           );
       });
-  }
+  },
 };
