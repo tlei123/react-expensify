@@ -43,6 +43,47 @@ module.exports = {
       .count.to.equal(e2eTestExpenses.length);
   },
 
+  'Filter Expenses': function (client) {
+    const filterText = e2eTestExpenses[1].description;
+    const filterTextFunction = (expense) => {
+      return expense.description === filterText;
+    };
+    const textFilteredExpenses = e2eTestExpenses.filter(filterTextFunction);
+    const filterStartDate = e2eTestExpenses[0].createdAt;
+    const filterStartDateFunction = (expense) => {
+      return expense.createdAt === filterStartDate;
+    };
+    const startDateFilteredExpenses =
+      e2eTestExpenses.filter(filterStartDateFunction);
+
+    client
+      .setValue(sel.textFilter, filterText)
+      .expect.elements(sel.expenseCmp)
+      .count.to.equal(textFilteredExpenses.length);
+    client
+      .expect.element(sel.description)
+      .text.to.equal(filterText);
+
+    client
+      .clearValue(sel.textFilter)
+      .setValue(sel.textFilter, [' ', client.Keys.BACK_SPACE])
+      .expect.elements(sel.expenseCmp)
+      .count.to.equal(e2eTestExpenses.length);
+
+    client
+      .setValue(sel.dateRangeFilterStart, filterStartDate)
+      .click(sel.viewTitle)
+      .expect.elements(sel.expenseCmp)
+      .count.to.equal(startDateFilteredExpenses.length);
+    client.expect.element(sel.date)
+      .text.to.equal(`${filterStartDate.substring(0, 5)}:`);
+
+    client
+      .click(sel.clearDateRangeFilterBtn)
+      .expect.elements(sel.expenseCmp)
+      .count.to.equal(e2eTestExpenses.length);
+  },
+
   'Sort Expenses': function (client) {
     client.waitForElementNotVisible('.DateRangePickerInput_clearDates', 500);
     client.expect.element(sel.sortMenu)

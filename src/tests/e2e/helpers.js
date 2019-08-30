@@ -5,12 +5,14 @@ const selectors = {
   passwordFld: 'input[type=password]',
 
   topNav: 'header .nav',
-  appPageTitle: 'h2.page-title',
+  viewTitle: 'h2',
   addExpenseLnk: '.header-nav a[href="/add"]',
 
   dashboardCmp: '.expensedashboard.component',
   textFilter: '[placeholder="filter by text"]',
-  clearFilterBtn: '.DateRangePickerInput_clearDates',
+  dateRangeFilterStart: '[name=dateRangeStart]',
+  dateRangeFilterEnd: '[name=dateRangeEnd]',
+  clearDateRangeFilterBtn: '.DateRangePickerInput_clearDates',
   sortMenu: '[name=sortby]',
   sortOption: '[name=sortby] option',
   expenseListCmp: '.expenselist.component',
@@ -77,7 +79,7 @@ function clearExpenses (client) {
   let expensesLength = 0;
 
   client
-    .click(s.clearFilterBtn)
+    .click(s.clearDateRangeFilterBtn)
     .elements('css selector', s.expenseCmp, result => {
       expensesLength = result.value.length;
       if (expensesLength > 0) {
