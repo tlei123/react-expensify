@@ -14,7 +14,20 @@ exports[`Should render alert with props 1`] = `
     dismissible={true}
     onClose={[Function]}
     show={true}
-    transition={[Function]}
+    transition={
+      Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "defaultProps": Object {
+          "appear": false,
+          "in": false,
+          "mountOnEnter": false,
+          "timeout": 300,
+          "unmountOnExit": false,
+        },
+        "displayName": "Fade",
+        "render": [Function],
+      }
+    }
   >
     <Fade
       appear={false}
