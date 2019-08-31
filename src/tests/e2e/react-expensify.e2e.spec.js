@@ -1,4 +1,9 @@
 // Start local dev, ensure you're logged out, then run test.
+// NOTE: Test-cases here are currently inter-dependent, and must be run in
+// the order they're saved below.  Each case assumes as app-state that resulted
+// from the previous case above it.
+// TODO: Make each test-case independent, so that any single case can be
+// individually run.
 const moment = require('moment');
 
 const Helpers = require('./helpers.js');
@@ -55,6 +60,12 @@ module.exports = {
     };
     const startDateFilteredExpenses =
       e2eTestExpenses.filter(filterStartDateFunction);
+    const filterEndDate = e2eTestExpenses[2].createdAt;
+    const filterEndDateFunction = (expense) => {
+      return expense.createdAt === filterEndDate;
+    };
+    const endDateFilteredExpenses =
+      e2eTestExpenses.filter(filterEndDateFunction);
 
     client
       .setValue(sel.textFilter, filterText)
@@ -77,6 +88,19 @@ module.exports = {
       .count.to.equal(startDateFilteredExpenses.length);
     client.expect.element(sel.date)
       .text.to.equal(`${filterStartDate.substring(0, 5)}:`);
+
+    client
+      .click(sel.clearDateRangeFilterBtn)
+      .expect.elements(sel.expenseCmp)
+      .count.to.equal(e2eTestExpenses.length);
+
+    client
+      .setValue(sel.dateRangeFilterEnd, filterEndDate)
+      .click(sel.viewTitle)
+      .expect.elements(sel.expenseCmp)
+      .count.to.equal(endDateFilteredExpenses.length);
+    client.expect.element(sel.date)
+      .text.to.equal(`${filterEndDate.substring(0, 5)}:`);
 
     client
       .click(sel.clearDateRangeFilterBtn)
