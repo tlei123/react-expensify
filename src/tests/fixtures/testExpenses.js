@@ -24,4 +24,4 @@ const testExpenses = [
   }
 ];
 
-export default testExpenses;
+module.exports = testExpenses;

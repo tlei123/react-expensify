@@ -2,6 +2,8 @@ import expensesReducer from '../../reducers/expensesReducer';
 import moment from 'moment';
 import testExpenses from '../fixtures/testExpenses.js';
 
+console.log('testExpanses: ', testExpenses);
+
 test('Should set default state', () => {
   const newState = expensesReducer(undefined, { type: '@@INIT' });
 
