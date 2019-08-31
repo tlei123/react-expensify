@@ -1,3 +1,8 @@
+require('dotenv').config({ path: '.env.development' });
+
+const loginId = process.env.TEST_USER_ID;
+const loginPassword = process.env.TEST_USER_PASSWORD;
+
 const selectors = {
   loginPgTitle: 'h1.login-title',
   loginGoogle: '.login-btn.google',
@@ -53,7 +58,7 @@ function login (client) {
     client.waitForElementVisible(s.usernameFld, 10000, false, () => {
       client.setValue(
         s.usernameFld,
-        ['tze1testuser1@gmail.com', client.Keys.ENTER],
+        [loginId, client.Keys.ENTER],
         () => {
           // Allow for Firebase Auth processing & DOM-change, so as to
           // avoid state-element-reference error on next weitFormElementVisible.
@@ -64,7 +69,7 @@ function login (client) {
     client.waitForElementVisible(s.passwordFld, 5000, false, () => {
       client.setValue(
         s.passwordFld,
-        ['k;klL*6bP7Y', client.Keys.ENTER],
+        [loginPassword, client.Keys.ENTER],
         () => {
           switchTestWindow(client, 0);
           resolve('Login finished.');
