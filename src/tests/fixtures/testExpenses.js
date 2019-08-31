@@ -1,4 +1,4 @@
-const moment = require('moment');
+import moment from 'moment';
 
 const testExpenses = [
   {
@@ -24,6 +24,4 @@ const testExpenses = [
   }
 ];
 
-module.exports = {
-  testExpenses,
-};
+module.exports = testExpenses;

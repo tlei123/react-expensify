@@ -1,4 +1,4 @@
-require('dotenv').config({ path: '.env.development' });
+require('dotenv').config({ path: '.env.test' });
 
 const loginId = process.env.TEST_USER_ID;
 const loginPassword = process.env.TEST_USER_PASSWORD;
