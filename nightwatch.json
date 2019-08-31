@@ -11,6 +11,11 @@
     "default": {
       "desiredCapabilities": {
         "browserName": "chrome"
+      },
+      "extra_capabilities": {
+        "chromeOptions": {
+          "w3c": false
+        }
       }
     }
   }
