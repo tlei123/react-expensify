@@ -1,0 +1,6 @@
+language: node_js
+node_js:
+- '10.15'
+before_install:
+- currentfolder=${PWD##*/}
+- if [ "$currentfolder" != 'react-expensify' ]; then cd .. && eval "mv $currentfolder react-expensify" && cd react-expensify; fi
