@@ -5,7 +5,7 @@ import testExpenses from '../fixtures/testExpenses';
 import db from '../../firebase/firebase';
 
 const createMockStore = configureMockStore([thunk]),
-  uid = 'tze1testuser1@gmail.com',
+  uid = 'testAbc123!',
   defaultAuthState = { auth: { uid } };
 
 beforeEach((done) => {
