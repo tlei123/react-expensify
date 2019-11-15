@@ -13,6 +13,14 @@
   "moduleNameMapper": {
     "\\.(css|less|sass|scss)$": "<rootDir>/src/tests/__mocks__/stylesheetMock.js"
   },
+  "reporters": [
+    "default",
+    ["./node_modules/jest-html-reporter", {
+      "outputPath": "<rootDir>/tests_output/unit/index.html",
+      "pageTitle": "React-Expensify Unit-Tests Report",
+      "includeFailureMsg": true
+    }]
+  ],
   "collectCoverage": true,
   "coveragePathIgnorePatterns": [
     "/node_modules/",
