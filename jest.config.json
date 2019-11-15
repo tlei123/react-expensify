@@ -15,6 +15,11 @@
   },
   "reporters": [
     "default",
+    [
+      "jest-junit", {
+        "outputDirectory": "<rootDir>/tests_output/unit/"
+      }
+    ],
     ["./node_modules/jest-html-reporter", {
       "outputPath": "<rootDir>/tests_output/unit/index.html",
       "pageTitle": "React-Expensify Unit-Tests Report",
@@ -27,15 +32,7 @@
     "/public/",
     "/server/",
     "/src/tests/",
-    "/tests_output"
+    "/tests_output/"
   ],
-  "coverageDirectory": "<rootDir>/tests_output/unit/coverage/",
-  "coverageThreshold": {
-    "global": {
-      "branches": 80,
-      "functions": 80,
-      "lines": 80,
-      "statements": -10
-    }
-  }
+  "coverageDirectory": "<rootDir>/tests_output/unit/coverage/"
 }
