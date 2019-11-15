@@ -12,5 +12,22 @@
   ],
   "moduleNameMapper": {
     "\\.(css|less|sass|scss)$": "<rootDir>/src/tests/__mocks__/stylesheetMock.js"
+  },
+  "collectCoverage": true,
+  "coveragePathIgnorePatterns": [
+    "/node_modules/",
+    "/public/",
+    "/server/",
+    "/src/tests/",
+    "/tests_output"
+  ],
+  "coverageDirectory": "<rootDir>/tests_output/unit/coverage/",
+  "coverageThreshold": {
+    "global": {
+      "branches": 80,
+      "functions": 80,
+      "lines": 80,
+      "statements": -10
+    }
   }
 }
