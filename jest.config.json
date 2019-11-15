@@ -12,5 +12,27 @@
   ],
   "moduleNameMapper": {
     "\\.(css|less|sass|scss)$": "<rootDir>/src/tests/__mocks__/stylesheetMock.js"
-  }
+  },
+  "reporters": [
+    "default",
+    [
+      "jest-junit", {
+        "outputDirectory": "<rootDir>/tests_output/unit/"
+      }
+    ],
+    ["./node_modules/jest-html-reporter", {
+      "outputPath": "<rootDir>/tests_output/unit/index.html",
+      "pageTitle": "React-Expensify Unit-Tests Report",
+      "includeFailureMsg": true
+    }]
+  ],
+  "collectCoverage": true,
+  "coveragePathIgnorePatterns": [
+    "/node_modules/",
+    "/public/",
+    "/server/",
+    "/src/tests/",
+    "/tests_output/"
+  ],
+  "coverageDirectory": "<rootDir>/tests_output/unit/coverage/"
 }
