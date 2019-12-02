@@ -28,7 +28,7 @@ export class Expense extends React.Component {
     this.setState({ showConfirmModal: false });
   }
 
-  startRemove () {
+  startRemove = () => {
     this.props.startRemoveExpense({ id: this.props.id });
     this.setState({ showConfirmModal: false });
   }

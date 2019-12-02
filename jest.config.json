@@ -13,6 +13,9 @@
   "moduleNameMapper": {
     "\\.(css|less|sass|scss)$": "<rootDir>/src/tests/__mocks__/stylesheetMock.js"
   },
+  "watchPathIgnorePatterns": [
+    "/tests_output/"
+  ],
   "reporters": [
     "default",
     [
