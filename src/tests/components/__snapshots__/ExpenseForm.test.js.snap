@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Should render ExpenseForm correctly 1`] = `
+exports[`ExpenseForm component Should render ExpenseForm correctly 1`] = `
 <div
   className="expenseform component"
 >
@@ -131,7 +131,7 @@ exports[`Should render ExpenseForm correctly 1`] = `
 </div>
 `;
 
-exports[`Should render ExpenseForm correctly with expense data 1`] = `
+exports[`ExpenseForm component Should render ExpenseForm correctly with expense data 1`] = `
 <div
   className="expenseform component"
 >
@@ -262,7 +262,7 @@ exports[`Should render ExpenseForm correctly with expense data 1`] = `
 </div>
 `;
 
-exports[`Should render error on invalid submission 1`] = `
+exports[`ExpenseForm component Should render error on invalid submission 1`] = `
 <div
   className="expenseform component"
 >
@@ -393,7 +393,7 @@ exports[`Should render error on invalid submission 1`] = `
 </div>
 `;
 
-exports[`Should render error on invalid submission 2`] = `
+exports[`ExpenseForm component Should render error on invalid submission 2`] = `
 <div
   className="expenseform component"
 >

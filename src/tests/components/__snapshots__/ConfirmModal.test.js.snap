@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Should render properly with default prop values 1`] = `
+exports[`ConfirmModel component Should render properly with default prop values 1`] = `
 <Bootstrap(Modal)
   className="confirmmodal component"
   show={true}
@@ -52,7 +52,7 @@ exports[`Should render properly with default prop values 1`] = `
 </Bootstrap(Modal)>
 `;
 
-exports[`Should render properly with optional prop values 1`] = `
+exports[`ConfirmModel component Should render properly with optional prop values 1`] = `
 <Bootstrap(Modal)
   className="confirmmodal component"
   show={true}

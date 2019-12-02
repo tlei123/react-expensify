@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Should render Loader properly 1`] = `
+exports[`Loader component Should render Loader properly 1`] = `
 <div
   className="loader component"
 >

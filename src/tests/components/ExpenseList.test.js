@@ -3,14 +3,16 @@ import { shallow } from 'enzyme';
 import { ExpenseList } from '../../components/ExpenseList';
 import testExpenses from '../fixtures/testExpenses';
 
-test('Should render ExpenseList with expenses', () => {
-  const wrapper = shallow(<ExpenseList expenses={testExpenses} />);
+describe('ExpenseList component', () => {
+	it('Should render ExpenseList with expenses', () => {
+	  const wrapper = shallow(<ExpenseList expenses={testExpenses} />);
 
-  expect(wrapper).toMatchSnapshot();
-});
+	  expect(wrapper).toMatchSnapshot();
+	});
 
-test('Should render ExpenseList with no-expenses message', () => {
-  const wrapper = shallow(<ExpenseList expenses={[]} />);
+	it('Should render ExpenseList with no-expenses message', () => {
+	  const wrapper = shallow(<ExpenseList expenses={[]} />);
 
-  expect(wrapper).toMatchSnapshot();
+	  expect(wrapper).toMatchSnapshot();
+	});
 });

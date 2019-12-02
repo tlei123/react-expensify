@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Should render Expense with provided props 1`] = `
+exports[`Expense component Should render Expense with provided props 1`] = `
 <div
   className="expense component"
   id="expense-1"

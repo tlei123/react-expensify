@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Should render alert with props 1`] = `
+exports[`DismissableAlert component Should render alert with props 1`] = `
 <DismissableAlert
   autoDismiss={true}
   bsStyle="info"
@@ -87,7 +87,7 @@ exports[`Should render alert with props 1`] = `
 </DismissableAlert>
 `;
 
-exports[`Should render null with default props 1`] = `
+exports[`DismissableAlert component Should render null with default props 1`] = `
 <DismissableAlert
   autoDismiss={true}
   bsStyle="info"

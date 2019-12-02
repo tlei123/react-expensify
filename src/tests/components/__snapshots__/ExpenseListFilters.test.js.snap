@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Should render ExpenseListFilters correctly 1`] = `
+exports[`ExpenseListFilters component Should render ExpenseListFilters correctly 1`] = `
 <div
   className="expenselistfilters component"
 >
@@ -136,7 +136,7 @@ exports[`Should render ExpenseListFilters correctly 1`] = `
 </div>
 `;
 
-exports[`Should render ExpenseListFilters with altered filters 1`] = `
+exports[`ExpenseListFilters component Should render ExpenseListFilters with altered filters 1`] = `
 <div
   className="expenselistfilters component"
 >
