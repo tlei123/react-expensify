@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Should render NotFound correctly 1`] = `
+exports[`NotFound component Should render NotFound correctly 1`] = `
 <div>
   <h2>
     404 -- Not Found

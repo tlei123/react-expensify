@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Should render ExpenseList with expenses 1`] = `
+exports[`ExpenseList component Should render ExpenseList with expenses 1`] = `
 <div
   className="expenselist component"
 >
@@ -31,7 +31,7 @@ exports[`Should render ExpenseList with expenses 1`] = `
 </div>
 `;
 
-exports[`Should render ExpenseList with no-expenses message 1`] = `
+exports[`ExpenseList component Should render ExpenseList with no-expenses message 1`] = `
 <div
   className="expenselist component"
 >
