@@ -7,57 +7,59 @@ import {
   setFilterEndDate
 } from '../../actions/filtersActions';
 
-test('Should generate set-text action-object with provided value', () => {
-  const textVal = 'test',
-    actionObj = setFilterText(textVal);
+describe('filtersActions', () => {
+  it('Should generate set-text action-object with provided value', () => {
+    const textVal = 'test',
+      actionObj = setFilterText(textVal);
 
-  expect(actionObj).toEqual({
-    type: 'SET_FILTER_TEXT',
-    text: textVal
+    expect(actionObj).toEqual({
+      type: 'SET_FILTER_TEXT',
+      text: textVal
+    });
   });
-});
 
-test('Should generate set-filter-text action-object with no provided value', () => {
-  const actionObj = setFilterText();
+  it('Should generate set-filter-text action-object with no provided value', () => {
+    const actionObj = setFilterText();
 
-  expect(actionObj).toEqual({
-    type: 'SET_FILTER_TEXT',
-    text: ''
+    expect(actionObj).toEqual({
+      type: 'SET_FILTER_TEXT',
+      text: ''
+    });
   });
-});
 
-test('Should generate set-filter-sortby-amount action-object', () => {
-  const actionObj = setFilterSortByAmount();
+  it('Should generate set-filter-sortby-amount action-object', () => {
+    const actionObj = setFilterSortByAmount();
 
-  expect(actionObj).toEqual({
-    type: 'SET_FILTER_SORTBY',
-    sortBy: 'amount'
+    expect(actionObj).toEqual({
+      type: 'SET_FILTER_SORTBY',
+      sortBy: 'amount'
+    });
   });
-});
 
-test('Should generate set-filter-sortby-date action-object', () => {
-  const actionObj = setFilterSortByDate();
+  it('Should generate set-filter-sortby-date action-object', () => {
+    const actionObj = setFilterSortByDate();
 
-  expect(actionObj).toEqual({
-    type: 'SET_FILTER_SORTBY',
-    sortBy: 'date'
+    expect(actionObj).toEqual({
+      type: 'SET_FILTER_SORTBY',
+      sortBy: 'date'
+    });
   });
-});
 
-test('Should generate set-start-date action-object', () => {
-  const actionObj = setFilterStartDate(moment(0));
+  it('Should generate set-start-date action-object', () => {
+    const actionObj = setFilterStartDate(moment(0));
 
-  expect(actionObj).toEqual({
-    type: 'SET_FILTER_STARTDATE',
-    date: moment(0)
+    expect(actionObj).toEqual({
+      type: 'SET_FILTER_STARTDATE',
+      date: moment(0)
+    });
   });
-});
 
-test('Should generate set-end-date action-object', () => {
-  const actionObj = setFilterEndDate(moment(1540329165699));
+  it('Should generate set-end-date action-object', () => {
+    const actionObj = setFilterEndDate(moment(1540329165699));
 
-  expect(actionObj).toEqual({
-    type: 'SET_FILTER_ENDDATE',
-    date: moment(1540329165699)
+    expect(actionObj).toEqual({
+      type: 'SET_FILTER_ENDDATE',
+      date: moment(1540329165699)
+    });
   });
 });
