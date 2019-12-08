@@ -4,6 +4,7 @@ import { DismissableAlert } from '../../components/DismissableAlert';
 
 describe('DismissableAlert component', () => {
   const dismissMessageStub = jest.fn();
+  const timeoutDismissStub = jest.fn();
   const propsDefault = {
     show: false,
     bsStyle: 'info',
@@ -19,8 +20,16 @@ describe('DismissableAlert component', () => {
 
   const wrapper = mount(<DismissableAlert
     dismissMessage={ dismissMessageStub }
+    timeoutDismiss={ timeoutDismissStub }
   />);
+
+  beforeEach(() => {
     wrapper.setProps(propsDefault);
+  });
+
+  // afterEach((() => {
+  //   jest.setTimeout(5000);
+  // }));
 
   it('Should render null with default props', () => {
     expect(wrapper).toMatchSnapshot();
@@ -29,25 +38,25 @@ describe('DismissableAlert component', () => {
 
   it('Should render alert with props', () => {
     wrapper.setProps(propsShow);
+
     expect(wrapper).toMatchSnapshot();
   });
 
   it('Should call dismissMessage on close-button click', () => {
+    wrapper.setProps(propsShow);
+
     wrapper.find('button.close').simulate('click');
 
     expect(dismissMessageStub).toHaveBeenCalled();
   });
 
   it('Should auto-hide alert after 3.5 secs (default duration)', () => {
-    wrapper.setProps({
-      show: true,
-      content: '[test content2]',
-      autoDismiss: true,
-    });
+    jest.useFakeTimers();
 
-    expect(wrapper.find('.alert').length).toEqual(1);
+    wrapper.setProps(propsShow);
+
     setTimeout(() => {
-      expect(wrapper.find('.alert').length).toEqual(0);
-    }, 4000);
+      expect(wrapper.find('.dissmissablealert.component')).to.have.lengthOf(0);
+    }, 4500);
   });
 });

@@ -7,6 +7,7 @@ exports[`DismissableAlert component Should render alert with props 1`] = `
   content="[test content]"
   dismissMessage={[MockFunction]}
   show={true}
+  timeoutDismiss={[MockFunction]}
 >
   <Alert
     className="dismissablealert component"
@@ -94,5 +95,6 @@ exports[`DismissableAlert component Should render null with default props 1`] = 
   content=""
   dismissMessage={[MockFunction]}
   show={false}
+  timeoutDismiss={[MockFunction]}
 />
 `;
