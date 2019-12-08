@@ -27,10 +27,6 @@ describe('DismissableAlert component', () => {
     wrapper.setProps(propsDefault);
   });
 
-  // afterEach((() => {
-  //   jest.setTimeout(5000);
-  // }));
-
   it('Should render null with default props', () => {
     expect(wrapper).toMatchSnapshot();
     expect(wrapper.find('.alert').length).toEqual(0);
@@ -50,13 +46,17 @@ describe('DismissableAlert component', () => {
     expect(dismissMessageStub).toHaveBeenCalled();
   });
 
-  it('Should auto-hide alert after 3.5 secs (default duration)', () => {
+  it('Should auto-hide alert after 3.5 secs (default duration)', async () => {
+    jest.setTimeout(10000);
     jest.useFakeTimers();
 
     wrapper.setProps(propsShow);
+    wrapper.update();
 
     setTimeout(() => {
       expect(wrapper.find('.dissmissablealert.component')).to.have.lengthOf(0);
     }, 4500);
+
+    jest.setTimeout(5000);
   });
 });
