@@ -12,8 +12,6 @@ jobs:
           npm-version: 6.9.0
       - run: node --version
   install-packages:
-    executor:
-      name: node/default
     steps:
       - node/install-packages
 
