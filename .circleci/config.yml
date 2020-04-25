@@ -11,17 +11,14 @@ jobs:
           node-version: 10.16.0
           npm-version: 6.9.0
       - run: node --version
-  build-and-test:
+  install-packages:
     executor:
       name: node/default
     steps:
-      - node/with-cache:
-          steps:
-            - run: npm install
-            - run: npm build:prod
-            - run: npm test:unit
+      - node/install-packages
+
 workflows:
     build-and-test:
       jobs:
         - install-node
-        - build-and-test
+        - install-packages
