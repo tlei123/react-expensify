@@ -2,14 +2,17 @@ version: 2.1
 orbs:
   node: circleci/node@2.0.3
 jobs:
+  install-node:
+    steps:
+      - checkout
+      - node/install:
+          install-yarn: false
+          node-version: 10.16.0
+          npm-version: 6.9.0
   build-and-test:
     executor:
       name: node/default
     steps:
-      - checkout
-      - node/install:
-        node-version: '10.16.0'
-        npm-version: '6.9.0'
       - node/with-cache:
           steps:
             - run: npm install
@@ -18,4 +21,5 @@ jobs:
 workflows:
     build-and-test:
       jobs:
+        - install-node
         - build-and-test
